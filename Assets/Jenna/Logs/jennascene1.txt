@@ -1,0 +1,2 @@
+Made a couple of assets and built a small scene to test 
+the universal pipeline renderer, for lighting functionality
