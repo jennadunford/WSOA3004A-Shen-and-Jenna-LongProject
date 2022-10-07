@@ -15,7 +15,7 @@ public class playerMovement : MonoBehaviour
 
     public float lastMoveHori;
     public float lastMoveVert;
-    public float totalDashTime = 0.05f;
+    public float totalDashTime = 0.1f;
     public float remainingDashTime = 0f;
     public float dashSpeed = 20f;
     public bool dashing = false;
