@@ -262,6 +262,13 @@ MonoBehaviour:
   playerRigidBody: {fileID: 57965938}
   moveSpeed: 10
   vertSpeed: 10
+  lastMoveHori: 0
+  lastMoveVert: 0
+  totalDashTime: 0.1
+  remainingDashTime: 0
+  dashSpeed: 20
+  dashing: 0
+  playerVel: {x: 0, y: 0}
 --- !u!1 &183732510
 GameObject:
   m_ObjectHideFlags: 0

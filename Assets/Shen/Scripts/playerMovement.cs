@@ -13,24 +13,83 @@ public class playerMovement : MonoBehaviour
     public static float vertMovement;
     public float vertSpeed = 10f;
 
-    
+    public float lastMoveHori;
+    public float lastMoveVert;
+    public float totalDashTime = 0.05f;
+    public float remainingDashTime = 0f;
+    public float dashSpeed = 20f;
+    public bool dashing = false;
+    public Vector2 playerVel;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        remainingDashTime = totalDashTime;
+        lastMoveHori = 1f;
+        lastMoveVert = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerVel = playerRigidBody.velocity;
+
+        
+
+        if (moveHori != 0)
+        {
+            lastMoveHori = moveHori;
+        }
+
+        if (vertMovement != 0)
+        {
+            lastMoveVert = vertMovement;
+        }
+
+        if (moveHori == 0 && vertMovement != 0)
+        {
+            lastMoveHori = 0;
+        }
+
+        if (moveHori != 0 && vertMovement == 0)
+        {
+            lastMoveVert = 0;
+        }
+
+        if (!dashing && Input.GetKeyDown(KeyCode.Space))
+        {
+
+            if (remainingDashTime == totalDashTime)
+            {
+                //remainingDashTime -= Time.deltaTime;
+                dashing = true;
+                //playerRigidBody.velocity = new Vector2(lastMoveVert * dashSpeed, lastMoveHori * dashSpeed);
+            }
+
+            
+
+            /*if (remainingDashTime > 0 && remainingDashTime < totalDashTime)
+            {
+
+            }*/
+        }
+
+        /*if (dashing)
+        {
+            playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed, lastMoveVert * dashSpeed);
+            
+            remainingDashTime -= Time.deltaTime;
+            //playerRigidBody.velocity = new Vector2(50f, 50f);
+        }*/
+
+        if (remainingDashTime <= 0)
+        {
+            playerRigidBody.velocity = new Vector2(0f, 0f);
+            dashing = false;
+            remainingDashTime = totalDashTime;
+        }
 
         //vertMovement = Input.GetAxisRaw("Vertical");
-        
-
-        
-
-
 
         /*if (enemyObject.transform.position.x > gameObject.transform.position.x)
         {
@@ -53,6 +112,15 @@ public class playerMovement : MonoBehaviour
 
         vertMovement = Input.GetAxisRaw("Vertical");
         playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, vertMovement * vertSpeed);
+
+
+        if (dashing)
+        {
+            playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed, lastMoveVert * dashSpeed);
+
+            remainingDashTime -= Time.fixedDeltaTime; //fixed delta time is for fixed update, update just uses delta time
+            //playerRigidBody.velocity = new Vector2(50f, 50f);
+        }
 
         //playerAnimator.SetFloat("Speed", Mathf.Abs(moveHori));                                      //setting the speed parameter for when the movement animation needs to be called
     }
