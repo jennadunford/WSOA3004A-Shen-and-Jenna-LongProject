@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyFieldOfView : MonoBehaviour
 {
     public float fieldOfViewAngle = 90f;
-    public float viewRange = 12f;
+    public float viewRange = 6f;
 
     public Transform fieldOfViewPoint;
     public Transform targetPoint;
@@ -31,12 +31,12 @@ public class enemyFieldOfView : MonoBehaviour
             {
               if (sightRay.collider.CompareTag("Player") /*sightRay.collider.IsTouchingLayers(playerLayer)*/ )//the player has been spotted
               {
-                Debug.Log("player spotted");
+                //Debug.Log("player spotted");
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
                 }
                 else
                 {
-                    Debug.Log("player out of view");
+                    //Debug.Log("player out of view");
                 }
             }   
             /*else

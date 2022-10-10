@@ -6,7 +6,7 @@ public class jennaEnemyPatrol : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform[] enemyPatrolPoints;
-    public float enemyMoveSpeed = 100f;
+    public float enemyMoveSpeed = 10f;
     public int patrolCount = 1;
 
 
