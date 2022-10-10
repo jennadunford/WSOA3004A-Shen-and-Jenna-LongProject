@@ -20,6 +20,8 @@ public class playerMovement : MonoBehaviour
     public float dashSpeed = 20f;
     public bool dashing = false;
     public Vector2 playerVel;
+    public float dashCoolDownTime = 0.2f;
+    public bool coolDownOver = true;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +61,7 @@ public class playerMovement : MonoBehaviour
         if (!dashing && Input.GetKeyDown(KeyCode.Space))
         {
 
-            if (remainingDashTime == totalDashTime)
+            if (coolDownOver && remainingDashTime == totalDashTime)
             {
                 //remainingDashTime -= Time.deltaTime;
                 dashing = true;
@@ -87,6 +89,19 @@ public class playerMovement : MonoBehaviour
             playerRigidBody.velocity = new Vector2(0f, 0f);
             dashing = false;
             remainingDashTime = totalDashTime;
+            //dashCoolDownTime -= Time.deltaTime;
+            coolDownOver = false;
+        }
+
+        if (!coolDownOver)
+        {
+            dashCoolDownTime -= Time.deltaTime;
+        }
+
+        if (dashCoolDownTime <=0)
+        {
+            coolDownOver = true;
+            dashCoolDownTime = 0.2f;
         }
 
         //vertMovement = Input.GetAxisRaw("Vertical");

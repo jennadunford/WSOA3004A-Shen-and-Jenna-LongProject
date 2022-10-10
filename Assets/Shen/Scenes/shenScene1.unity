@@ -269,6 +269,8 @@ MonoBehaviour:
   dashSpeed: 40
   dashing: 0
   playerVel: {x: 0, y: 0}
+  dashCoolDownTime: 0.2
+  coolDownOver: 1
 --- !u!1 &183732510
 GameObject:
   m_ObjectHideFlags: 0
