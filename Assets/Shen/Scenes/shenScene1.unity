@@ -726,6 +726,7 @@ GameObject:
   - component: {fileID: 1043932251}
   - component: {fileID: 1043932250}
   - component: {fileID: 1043932254}
+  - component: {fileID: 1043932255}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -844,7 +845,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043932248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3cc6ae8e87114c4ea5a242ddc51138b, type: 3}
   m_Name: 
@@ -855,6 +856,25 @@ MonoBehaviour:
   - {fileID: 1586149676}
   - {fileID: 1624331542}
   enemyMoveSpeed: 10
+--- !u!114 &1043932255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043932248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba049ca1f2fef6a4c877351338df63c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPatrolPoints:
+  - {fileID: 1046671857}
+  - {fileID: 1023209338}
+  - {fileID: 1586149676}
+  - {fileID: 1624331542}
+  enemyMoveSpeed: 10
+  patrolCount: 1
 --- !u!1 &1046671856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632622206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
