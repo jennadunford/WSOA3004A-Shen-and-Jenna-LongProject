@@ -14,6 +14,7 @@ public class enemyFieldOfView : MonoBehaviour
 
     public Transform playerRespawnPoint;
     public GameObject player;
+    public GameObject spottedText;
 
     //public LayerMask playerLayer;
 
@@ -38,7 +39,9 @@ public class enemyFieldOfView : MonoBehaviour
               {
                 //Debug.Log("player spotted");
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
-                    player.transform.position = playerRespawnPoint.position;
+                    Invoke("resetPlayer", 1f);
+                    spottedText.SetActive(true);
+                    //player.transform.position = playerRespawnPoint.position;
                 }
                 else
                 {
@@ -53,5 +56,11 @@ public class enemyFieldOfView : MonoBehaviour
             
 
         }
+    }
+
+    public void resetPlayer()
+    {
+        player.transform.position = playerRespawnPoint.position;
+        spottedText.SetActive(false);
     }
 }
