@@ -16,6 +16,7 @@ public class enemyFieldOfView : MonoBehaviour
     public GameObject player;
     public GameObject spottedText;
 
+
     //public LayerMask playerLayer;
 
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class enemyFieldOfView : MonoBehaviour
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
                     Invoke("resetPlayer", 1f);
                     spottedText.SetActive(true);
+                    player.GetComponent<playerCollection>().resetEmeralds();
                     //player.transform.position = playerRespawnPoint.position;
                 }
                 else

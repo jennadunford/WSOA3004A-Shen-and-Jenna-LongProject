@@ -13,6 +13,10 @@ public class playerCollection : MonoBehaviour
     public Text collectedItemText;
     int numItemsCollected = 0;
 
+    public GameObject[] emeralds;
+
+    public GameObject pickUpText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +36,18 @@ public class playerCollection : MonoBehaviour
             {
                 numItemsCollected++;
                 collectedItemText.text = "Emeralds collected: " + numItemsCollected.ToString();
-                Destroy(collectibleItem.gameObject);
+               // emeralds[emeralds.Length] = collectibleItem.gameObject;
+                collectibleItem.gameObject.SetActive(false);
             }
+        }
+
+        if (itemInRange)
+        {
+            pickUpText.SetActive(true);
+        }
+        else
+        {
+            pickUpText.SetActive(false);
         }
 
     }
@@ -45,6 +59,17 @@ public class playerCollection : MonoBehaviour
             return;
         }
         Gizmos.DrawWireSphere(collectionPoint.position, collectionRange);
+    }
+
+    public void resetEmeralds()
+    {
+        numItemsCollected = 0;
+        collectedItemText.text = "Emeralds collected: " + numItemsCollected.ToString();
+        foreach(GameObject item in emeralds)
+        {
+            item.gameObject.SetActive(true);
+        }
+        
     }
 
 }
