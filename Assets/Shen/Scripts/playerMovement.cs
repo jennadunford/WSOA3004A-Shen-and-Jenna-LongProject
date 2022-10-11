@@ -58,9 +58,29 @@ public class playerMovement : MonoBehaviour
             lastMoveVert = 0;
         }
 
-        if (!dashing && Input.GetKeyDown(KeyCode.Space))
+        if (lastMoveHori < 0)
         {
+            lastMoveHori = -1;
+        }
 
+        if (lastMoveHori > 0)
+        {
+            lastMoveHori = 1;
+        }
+
+        if (lastMoveVert < 0)
+        {
+            lastMoveVert = -1;
+        }
+
+        if (lastMoveVert > 0)
+        {
+            lastMoveVert = 1;
+        }
+
+        if (!dashing && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 1")))
+        {
+            
             if (coolDownOver && remainingDashTime == totalDashTime)
             {
                 //remainingDashTime -= Time.deltaTime;
@@ -131,7 +151,16 @@ public class playerMovement : MonoBehaviour
 
         if (dashing)
         {
-            playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed, lastMoveVert * dashSpeed);
+            if (lastMoveHori != 0 && lastMoveVert != 0)
+            {
+                playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed/2, lastMoveVert * dashSpeed/2);
+            }
+            else
+            {
+                playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed, lastMoveVert * dashSpeed);
+            }
+
+            //playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed, lastMoveVert * dashSpeed);
 
             remainingDashTime -= Time.fixedDeltaTime; //fixed delta time is for fixed update, update just uses delta time
             //playerRigidBody.velocity = new Vector2(50f, 50f);
