@@ -12,6 +12,9 @@ public class enemyFieldOfView : MonoBehaviour
 
     public LayerMask ignoreEnemyLayer;
 
+    public Transform playerRespawnPoint;
+    public GameObject player;
+
     //public LayerMask playerLayer;
 
     // Start is called before the first frame update
@@ -35,6 +38,7 @@ public class enemyFieldOfView : MonoBehaviour
               {
                 //Debug.Log("player spotted");
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
+                    player.transform.position = playerRespawnPoint.position;
                 }
                 else
                 {
