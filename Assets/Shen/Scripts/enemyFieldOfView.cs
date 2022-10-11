@@ -10,6 +10,8 @@ public class enemyFieldOfView : MonoBehaviour
     public Transform fieldOfViewPoint;
     public Transform targetPoint;
 
+    public LayerMask ignoreEnemyLayer;
+
     //public LayerMask playerLayer;
 
     // Start is called before the first frame update
@@ -23,7 +25,7 @@ public class enemyFieldOfView : MonoBehaviour
     {
         Vector2 direction = targetPoint.position - /*transform.position*/ fieldOfViewPoint.position;
         float sightAngle = Vector3.Angle(direction, fieldOfViewPoint.up);
-        RaycastHit2D sightRay = Physics2D.Raycast(fieldOfViewPoint.position, direction, viewRange);
+        RaycastHit2D sightRay = Physics2D.Raycast(fieldOfViewPoint.position, direction, viewRange, ~ignoreEnemyLayer);
 
         if (sightAngle < fieldOfViewAngle / 2)
         {

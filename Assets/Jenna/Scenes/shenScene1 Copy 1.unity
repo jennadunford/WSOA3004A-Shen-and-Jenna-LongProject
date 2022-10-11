@@ -1231,6 +1231,7 @@ GameObject:
   - component: {fileID: 715114505}
   - component: {fileID: 715114504}
   - component: {fileID: 715114503}
+  - component: {fileID: 715114510}
   m_Layer: 7
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -1254,6 +1255,9 @@ MonoBehaviour:
   viewRange: 6
   fieldOfViewPoint: {fileID: 2042885759}
   targetPoint: {fileID: 57965937}
+  ignoreEnemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &715114504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,7 +1275,7 @@ MonoBehaviour:
   - {fileID: 1023209338}
   - {fileID: 1586149676}
   - {fileID: 1624331542}
-  enemyMoveSpeed: 10
+  enemyMoveSpeed: 5
   patrolCount: 1
 --- !u!114 &715114505
 MonoBehaviour:
@@ -1396,6 +1400,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &715114510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715114502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccb5132e4aabaa4f8e7f434374f2b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fovPoint: {fileID: 2042885758}
+  speed: 2
 --- !u!1 &777858178
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2042885759}
+  - component: {fileID: 2042885760}
   m_Layer: 7
   m_Name: new FOV point
   m_TagString: Untagged
@@ -3577,6 +3596,22 @@ Transform:
   m_Father: {fileID: 715114509}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &2042885760
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042885758}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.016777039, y: -1.140826}
+  m_Size: {x: 0.9361973, y: 2.0737185}
+  m_Direction: 0
 --- !u!1 &2047347364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,3 +3753,6 @@ MonoBehaviour:
   viewRange: 6
   fieldOfViewPoint: {fileID: 1691104717}
   targetPoint: {fileID: 57965937}
+  ignoreEnemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
