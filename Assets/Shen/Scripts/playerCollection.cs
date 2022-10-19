@@ -35,7 +35,7 @@ public class playerCollection : MonoBehaviour
             foreach (Collider2D collectibleItem in items)
             {
                 numItemsCollected++;
-                collectedItemText.text = "Emeralds collected: " + numItemsCollected.ToString();
+                collectedItemText.text = "Emeralds collected: " + numItemsCollected.ToString() + "/3";
                // emeralds[emeralds.Length] = collectibleItem.gameObject;
                 collectibleItem.gameObject.SetActive(false);
             }
@@ -64,7 +64,7 @@ public class playerCollection : MonoBehaviour
     public void resetEmeralds()
     {
         numItemsCollected = 0;
-        collectedItemText.text = "Emeralds collected: " + numItemsCollected.ToString();
+        collectedItemText.text = "Emeralds collected: " + numItemsCollected.ToString() + "/3";
         foreach(GameObject item in emeralds)
         {
             item.gameObject.SetActive(true);
