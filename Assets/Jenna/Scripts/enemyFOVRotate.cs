@@ -27,7 +27,7 @@ public class enemyFOVRotate : MonoBehaviour
            
         }
         //Quaternion rotation = Quaternion.AngleAxis(currentDir.z,Vector3.up);
-       // fovPoint.transform.rotation = rotation;
+        //fovPoint.transform.rotation = rotation;
 
         var angle = Mathf.Atan2(currentDir.y, currentDir.x) * Mathf.Rad2Deg ;
         fovPoint.transform.rotation = Quaternion.Lerp(fovPoint.transform.rotation,Quaternion.AngleAxis(angle-90, Vector3.forward),0.1f);
