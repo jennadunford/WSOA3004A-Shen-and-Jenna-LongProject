@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pickPocketTag
   - clue
+  - turnPoint
   layers:
   - Default
   - TransparentFX

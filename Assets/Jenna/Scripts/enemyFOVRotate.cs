@@ -19,18 +19,29 @@ public class enemyFOVRotate : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(fovPoint.transform.position!= prevPos)
+        if (gameObject.GetComponent<jennaEnemyPatrol>().patrolling)
         {
-            currentDir = (fovPoint.transform.position - prevPos).normalized;
-            prevPos = fovPoint.transform.position;
-            //Debug.Log("direction: " + currentDir);
-           
+            if (fovPoint.transform.position != prevPos)
+            {
+                currentDir = (fovPoint.transform.position - prevPos).normalized;
+                prevPos = fovPoint.transform.position;
+                //Debug.Log("direction: " + currentDir);
+
+            }
+            //Quaternion rotation = Quaternion.AngleAxis(currentDir.z,Vector3.up);
+            //fovPoint.transform.rotation = rotation;
+
+            var angle = Mathf.Atan2(currentDir.y, currentDir.x) * Mathf.Rad2Deg;
+            fovPoint.transform.rotation = Quaternion.Lerp(fovPoint.transform.rotation, Quaternion.AngleAxis(angle - 90, Vector3.forward), 0.1f);
         }
-        //Quaternion rotation = Quaternion.AngleAxis(currentDir.z,Vector3.up);
-        //fovPoint.transform.rotation = rotation;
 
-        var angle = Mathf.Atan2(currentDir.y, currentDir.x) * Mathf.Rad2Deg ;
-        fovPoint.transform.rotation = Quaternion.Lerp(fovPoint.transform.rotation,Quaternion.AngleAxis(angle-90, Vector3.forward),0.1f);
-
+        if (!gameObject.GetComponent<jennaEnemyPatrol>().patrolling)
+        {
+            var ang = Mathf.Atan2(0, 0) * Mathf.Rad2Deg;
+           // fovPoint.transform.rotation = Quaternion.Lerp(fovPoint.transform.rotation, Quaternion.AngleAxis(-200, Vector3.forward), 0.1f);
+            fovPoint.transform.RotateAround(-Vector3.forward, 2f*Time.deltaTime);
+        }
     }
+
+
 }

@@ -42,14 +42,14 @@ public class playerCollection : MonoBehaviour
                 if(collectibleItem.gameObject.tag == "clue")
                 {
                     numItemsCollected++;
-                    collectedItemText.text = "Emeralds collected: " + numItemsCollected.ToString() + "/3";
+                    collectedItemText.text = numItemsCollected.ToString();
                     // emeralds[emeralds.Length] = collectibleItem.gameObject;
                     collectibleItem.gameObject.SetActive(false);
                 }
                 else if(collectibleItem.gameObject.tag == "pickPocketTag")
                 {
                     numItemsPickPocketed++;
-                    pickPocketedText.text = "Items Pickpocketed: " + numItemsPickPocketed.ToString();
+                    pickPocketedText.text = numItemsPickPocketed.ToString();
                     collectibleItem.gameObject.tag = "Untagged";
                     //change tag of enemy to cant be pickpocketed
                     //Say this guard cant be pickpocketed anymore

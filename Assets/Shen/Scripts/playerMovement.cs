@@ -23,6 +23,8 @@ public class playerMovement : MonoBehaviour
     public float dashCoolDownTime = 0.2f;
     public bool coolDownOver = true;
 
+    public static bool playerCaught = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -137,7 +139,7 @@ public class playerMovement : MonoBehaviour
             enemyObject.transform.localScale = new Vector3(-0.4f, 0.4f, 1f);
         }*/
 
-
+ 
     }
 
     private void FixedUpdate()

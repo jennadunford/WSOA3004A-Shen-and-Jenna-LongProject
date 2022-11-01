@@ -40,8 +40,12 @@ public class enemyFieldOfView : MonoBehaviour
               {
                 //Debug.Log("player spotted");
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
-                    Invoke("resetPlayer", 0.3f);
-                    spottedText.SetActive(true);
+                    //Time.timeScale = 0;
+                    playerMovement.playerCaught = true;
+                   
+                    pauseAll();
+                    //Invoke("resetPlayer", 1f);
+                   // spottedText.SetActive(true);
                     //player.GetComponent<playerCollection>().resetEmeralds();
                     //player.transform.position = playerRespawnPoint.position;
                 }
@@ -64,5 +68,30 @@ public class enemyFieldOfView : MonoBehaviour
     {
         player.transform.position = playerRespawnPoint.position;
         spottedText.SetActive(false);
+        gameObject.GetComponent<jennaEnemyPatrol>().patrolling = true;
+        //resetting enemy
+     
+       // gameObject.GetComponent<enemyFOVRotate>().fovPoint.transform.rotation = Quaternion.identity;
     }
+
+    public void pauseAll()
+    {
+        spottedText.SetActive(true);
+        StartCoroutine(pauseAllActions(2f));
+    }
+
+    public IEnumerator pauseAllActions(float pauseFor)
+    {   
+        Time.timeScale = 0f;
+        float pauseEndTime = Time.realtimeSinceStartup + pauseFor;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return 0;
+        }
+        Time.timeScale = 1f;
+        resetPlayer();
+    }
+
+    
+
 }
