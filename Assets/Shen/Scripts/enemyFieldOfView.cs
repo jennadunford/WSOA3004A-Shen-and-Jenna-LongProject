@@ -40,9 +40,9 @@ public class enemyFieldOfView : MonoBehaviour
               {
                 //Debug.Log("player spotted");
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
-                    Invoke("resetPlayer", 1f);
+                    Invoke("resetPlayer", 0.3f);
                     spottedText.SetActive(true);
-                    player.GetComponent<playerCollection>().resetEmeralds();
+                    //player.GetComponent<playerCollection>().resetEmeralds();
                     //player.transform.position = playerRespawnPoint.position;
                 }
                 else
