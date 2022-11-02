@@ -25,9 +25,12 @@ public class playerMovement : MonoBehaviour
 
     public static bool playerCaught = false;
 
+    Vector2 playerDirection;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerCaught = false;
         remainingDashTime = totalDashTime;
         lastMoveHori = 1f;
         lastMoveVert = 0f;
@@ -36,7 +39,11 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         playerVel = playerRigidBody.velocity;
+
+        playerDirection = new Vector2(lastMoveHori, lastMoveVert);
+        
 
         
 
@@ -60,7 +67,7 @@ public class playerMovement : MonoBehaviour
             lastMoveVert = 0;
         }
 
-        if (lastMoveHori < 0)
+        /*if (lastMoveHori < 0)
         {
             lastMoveHori = -1;
         }
@@ -78,7 +85,7 @@ public class playerMovement : MonoBehaviour
         if (lastMoveVert > 0)
         {
             lastMoveVert = 1;
-        }
+        }*/
 
         if (!dashing && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 1")))
         {
@@ -153,15 +160,16 @@ public class playerMovement : MonoBehaviour
 
         if (dashing)
         {
-            if (lastMoveHori != 0 && lastMoveVert != 0)
+            /*if (lastMoveHori != 0 && lastMoveVert != 0)
             {
-                playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed/2, lastMoveVert * dashSpeed/2);
+                playerRigidBody.velocity = new Vector2(lastMoveHori *dashSpeed/2, lastMoveVert *dashSpeed/2);
+
             }
             else
             {
                 playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed, lastMoveVert * dashSpeed);
-            }
-
+            }*/
+            playerRigidBody.velocity = new Vector2(lastMoveHori * (40 / playerDirection.magnitude), lastMoveVert * (40 / playerDirection.magnitude));
             //playerRigidBody.velocity = new Vector2(lastMoveHori * dashSpeed, lastMoveVert * dashSpeed);
 
             remainingDashTime -= Time.fixedDeltaTime; //fixed delta time is for fixed update, update just uses delta time
