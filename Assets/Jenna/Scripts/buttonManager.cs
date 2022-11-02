@@ -13,10 +13,12 @@ public class buttonManager : MonoBehaviour
 
     public void openInventory()
     {
+        Time.timeScale = 0;
         inventoryUI.SetActive(true);
     }
     public void exitInventory()
     {
+        Time.timeScale = 1;
         inventoryUI.SetActive(false);
     }
 
