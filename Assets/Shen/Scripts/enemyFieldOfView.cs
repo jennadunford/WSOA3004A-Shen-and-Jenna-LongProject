@@ -16,13 +16,15 @@ public class enemyFieldOfView : MonoBehaviour
     public GameObject player;
     public GameObject spottedText;
 
+    public GameObject audioManager;
+
 
     //public LayerMask playerLayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -40,9 +42,11 @@ public class enemyFieldOfView : MonoBehaviour
               {
                 //Debug.Log("player spotted");
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
-                    //Time.timeScale = 0;
+                    audioManager.GetComponent<audioManagement>().playerCaught();
+                  
                     playerMovement.playerCaught = true;
-                   
+                    //sound play here
+                  
                     pauseAll();
                     //Invoke("resetPlayer", 1f);
                    // spottedText.SetActive(true);
@@ -81,7 +85,8 @@ public class enemyFieldOfView : MonoBehaviour
     }
 
     public IEnumerator pauseAllActions(float pauseFor)
-    {   
+    {
+        
         Time.timeScale = 0f;
         float pauseEndTime = Time.realtimeSinceStartup + pauseFor;
         while (Time.realtimeSinceStartup < pauseEndTime)
@@ -89,6 +94,7 @@ public class enemyFieldOfView : MonoBehaviour
             yield return 0;
         }
         Time.timeScale = 1f;
+       // audioManager.GetComponent<audioManagement>().audioS.clip = null;
         resetPlayer();
     }
 

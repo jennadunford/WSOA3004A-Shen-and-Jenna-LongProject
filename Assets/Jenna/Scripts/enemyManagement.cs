@@ -23,6 +23,7 @@ public class enemyManagement : MonoBehaviour
                 enemy.GetComponent<jennaEnemyPatrol>().patrolCount = 1;
             }
             playerMovement.playerCaught = false;
+
         }
         
     }
