@@ -19,7 +19,8 @@ public class enemyManagement : MonoBehaviour
             foreach(GameObject enemy in enemies)
             {
                 enemy.GetComponent<enemyFOVRotate>().fovPoint.transform.rotation = Quaternion.identity;   
-               enemy.transform.position = enemy.GetComponent<jennaEnemyPatrol>().enemyPatrolPoints[0].transform.position;             
+               enemy.transform.position = enemy.GetComponent<jennaEnemyPatrol>().enemyPatrolPoints[0].transform.position;
+                enemy.GetComponent<jennaEnemyPatrol>().patrolCount = 1;
             }
             playerMovement.playerCaught = false;
         }
