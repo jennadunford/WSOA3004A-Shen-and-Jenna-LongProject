@@ -13,8 +13,8 @@ public class audioManagement : MonoBehaviour
         audioS = GetComponent<AudioSource>();
     }
     public void playerCaught()
-    {
+    {     
         audioS.volume = 0.125f;
-        audioS.PlayOneShot(sounds[0]);
+        audioS.PlayOneShot(sounds[0]);       
     }
 }

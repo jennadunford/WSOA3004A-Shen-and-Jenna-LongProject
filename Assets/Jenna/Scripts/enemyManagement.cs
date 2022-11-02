@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemyManagement : MonoBehaviour
 {
     public GameObject[] enemies;
+    public static bool resetEnemies = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class enemyManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerMovement.playerCaught)
+        if (resetEnemies)
         {
             foreach(GameObject enemy in enemies)
             {
@@ -22,7 +23,7 @@ public class enemyManagement : MonoBehaviour
                enemy.transform.position = enemy.GetComponent<jennaEnemyPatrol>().enemyPatrolPoints[0].transform.position;
                 enemy.GetComponent<jennaEnemyPatrol>().patrolCount = 1;
             }
-            playerMovement.playerCaught = false;
+            resetEnemies = false;
 
         }
         

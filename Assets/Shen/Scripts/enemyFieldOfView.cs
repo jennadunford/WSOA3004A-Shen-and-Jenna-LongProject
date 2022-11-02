@@ -38,15 +38,16 @@ public class enemyFieldOfView : MonoBehaviour
         {
             if(sightRay.collider != null)
             {
-              if (sightRay.collider.CompareTag("Player") /*sightRay.collider.IsTouchingLayers(playerLayer)*/ )//the player has been spotted
+              if ((sightRay.collider.CompareTag("Player") && !playerMovement.playerCaught) /*sightRay.collider.IsTouchingLayers(playerLayer)*/ )//the player has been spotted
               {
                 //Debug.Log("player spotted");
                 Debug.DrawRay(fieldOfViewPoint.position, direction, Color.red);
-                    audioManager.GetComponent<audioManagement>().playerCaught();
-                  
-                    playerMovement.playerCaught = true;
+
+
+
                     //sound play here
-                  
+                    audioManager.GetComponent<audioManagement>().playerCaught();
+                    playerMovement.playerCaught = true;
                     pauseAll();
                     //Invoke("resetPlayer", 1f);
                    // spottedText.SetActive(true);
@@ -73,6 +74,9 @@ public class enemyFieldOfView : MonoBehaviour
         player.transform.position = playerRespawnPoint.position;
         spottedText.SetActive(false);
         gameObject.GetComponent<jennaEnemyPatrol>().patrolling = true;
+        enemyManagement.resetEnemies = true;
+        playerMovement.playerCaught = false;
+       
         //resetting enemy
      
        // gameObject.GetComponent<enemyFOVRotate>().fovPoint.transform.rotation = Quaternion.identity;
@@ -80,6 +84,7 @@ public class enemyFieldOfView : MonoBehaviour
 
     public void pauseAll()
     {
+        
         spottedText.SetActive(true);
         StartCoroutine(pauseAllActions(2f));
     }
@@ -94,8 +99,11 @@ public class enemyFieldOfView : MonoBehaviour
             yield return 0;
         }
         Time.timeScale = 1f;
-       // audioManager.GetComponent<audioManagement>().audioS.clip = null;
+        // audioManager.GetComponent<audioManagement>().audioS.clip = null;
         resetPlayer();
+        
+        
+
     }
 
     
