@@ -24,6 +24,7 @@ public class buttonManager : MonoBehaviour
 
     public void startGame()
     {
+        StartCoroutine(gameObject.GetComponent<sceneFadeManager>().FadeAndLoadScene(sceneFadeManager.FadeDirection.Out, 1));
         SceneManager.LoadScene(1);
     }
 
