@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Jenna/Scenes/prototype1V1.unity
     guid: b6282f744ea84ad4d9f096c95fc899b3
+  - enabled: 1
+    path: Assets/Jenna/Scenes/Menu1.unity
+    guid: 74ebaa26f03095c42bd6cf8a265edfa6
+  - enabled: 1
+    path: Assets/Jenna/Scenes/LevelDesigning1.unity
+    guid: 7e70844062ab11f48934a1ec34c02f3a
   m_configObjects: {}

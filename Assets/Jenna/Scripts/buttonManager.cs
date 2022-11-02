@@ -22,5 +22,10 @@ public class buttonManager : MonoBehaviour
         inventoryUI.SetActive(false);
     }
 
+    public void startGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 
 }
