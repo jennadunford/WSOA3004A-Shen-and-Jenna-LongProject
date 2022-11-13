@@ -20,6 +20,8 @@ public class collectionScript : MonoBehaviour
 
     public LayerMask[] collectiblesLayers;
 
+    public GameObject InventoryHandlerGlobal;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,18 +42,18 @@ public class collectionScript : MonoBehaviour
             {
                 if (collectibleItem.gameObject.tag == "clue")
                 {
-                    Debug.Log(collectibleItem.gameObject.name);
-                   gameObject.GetComponent<inventoryHandler>().addToInventory(collectibleItem.gameObject.name);
-                   
+                    //Debug.Log(collectibleItem.gameObject.name);
+                    InventoryHandlerGlobal.GetComponent<inventoryHandler>().addToInventory(collectibleItem.gameObject.name, collectibleItem.gameObject);
+
+
                     collectibleItem.gameObject.SetActive(false);
                 }
                 else if (collectibleItem.gameObject.tag == "pickPocketTag")
                 {
-                    numItemsPickPocketed++;
-                   // pickPocketedText.text = numItemsPickPocketed.ToString();
+
+                    InventoryHandlerGlobal.GetComponent<inventoryHandler>().addToInventory(collectibleItem.gameObject.name, collectibleItem.gameObject);
                     collectibleItem.gameObject.tag = "Untagged";
-                    //change tag of enemy to cant be pickpocketed
-                    //Say this guard cant be pickpocketed anymore
+
 
                 }
 

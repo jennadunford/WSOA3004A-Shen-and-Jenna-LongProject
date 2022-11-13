@@ -6,6 +6,8 @@ public class enemyManagement : MonoBehaviour
 {
     public GameObject[] enemies;
     public static bool resetEnemies = false;
+
+    public GameObject[] pickPocketPoints;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,10 @@ public class enemyManagement : MonoBehaviour
                 enemy.GetComponent<enemyFOVRotate>().fovPoint.transform.rotation = Quaternion.identity;   
                enemy.transform.position = enemy.GetComponent<jennaEnemyPatrol>().enemyPatrolPoints[0].transform.position;
                 enemy.GetComponent<jennaEnemyPatrol>().patrolCount = 1;
+            }
+            foreach(GameObject point in pickPocketPoints)
+            {
+                point.tag = "pickPocketTag";
             }
             resetEnemies = false;
 
