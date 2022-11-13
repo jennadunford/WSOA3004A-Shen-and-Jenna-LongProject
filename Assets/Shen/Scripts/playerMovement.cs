@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
     //public Animator playerAnimator;
 
     public Rigidbody2D playerRigidBody;
+    public Animator playerAnimator;
 
     float moveHori = 0f;
     public float moveSpeed = 10f;
@@ -43,8 +44,8 @@ public class playerMovement : MonoBehaviour
         playerVel = playerRigidBody.velocity;
 
         playerDirection = new Vector2(lastMoveHori, lastMoveVert);
-        
 
+        playerAnimator.SetFloat("horiSpeed", playerVel.y);
         
 
         if (moveHori != 0)
