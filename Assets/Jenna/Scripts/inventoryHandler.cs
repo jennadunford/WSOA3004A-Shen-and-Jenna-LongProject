@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class inventoryHandler : MonoBehaviour
 {
@@ -112,7 +113,13 @@ public class inventoryHandler : MonoBehaviour
 
     // Update is called once per frame
 
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
     public void showDescription(string name)
     {
         int indexVal = int.Parse(name);

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jenna/Scenes/LevelDesigning1.unity
     guid: 7e70844062ab11f48934a1ec34c02f3a
+  - enabled: 1
+    path: Assets/Jenna/Scenes/Level2.unity
+    guid: 46c01a8773b712148a10d3f576d663f7
   m_configObjects: {}
