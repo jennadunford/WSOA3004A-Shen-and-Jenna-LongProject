@@ -9,10 +9,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: -0.01
   - m_ConditionMode: 4
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1049779142520818961}
@@ -65,7 +65,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: -0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3865563005216007535}
@@ -118,7 +118,7 @@ AnimatorController:
   m_Name: PlayerAnimations
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: vertSpeed
+  - m_Name: horiSpeed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -146,10 +146,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: 0.01
   - m_ConditionMode: 3
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: -0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1049779142520818961}
@@ -174,7 +174,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8104035527663789231}
@@ -255,7 +255,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8104035527663789231}
@@ -280,7 +280,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: vertSpeed
+    m_ConditionEvent: horiSpeed
     m_EventTreshold: -0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3865563005216007535}
