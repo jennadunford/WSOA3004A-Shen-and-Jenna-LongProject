@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class enemyFieldOfView : MonoBehaviour
 {
@@ -24,7 +26,7 @@ public class enemyFieldOfView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        spottedText = GameObject.Find("caughtPanel");
     }
 
     // Update is called once per frame
@@ -72,11 +74,16 @@ public class enemyFieldOfView : MonoBehaviour
     public void resetPlayer()
     {
         player.transform.position = playerRespawnPoint.position;
-        spottedText.SetActive(false);
+        //spottedText.SetActive(false);
+        foreach (Image im in spottedText.GetComponentsInChildren<Image>())
+        {
+            im.enabled = false;
+        }
+        spottedText.GetComponentInChildren<Text>().enabled = false;
         gameObject.GetComponent<jennaEnemyPatrol>().patrolling = true;
         enemyManagement.resetEnemies = true;
         playerMovement.playerCaught = false;
-        player.GetComponent<collectionScript>().InventoryHandlerGlobal.GetComponent<inventoryHandler>().loseItemsFromScene(1);
+        player.GetComponent<collectionScript>().InventoryHandlerGlobal.GetComponent<inventoryHandler>().loseItemsFromScene(SceneManager.GetActiveScene().buildIndex);
        
         //resetting enemy
      
@@ -85,8 +92,16 @@ public class enemyFieldOfView : MonoBehaviour
 
     public void pauseAll()
     {
+
+        //spottedText.SetActive(true);
+        foreach(Image im in spottedText.GetComponentsInChildren<Image>())
+        {
+            im.enabled = true;
+        }
+       // spottedText.GetComponent<Image>().enabled = true;
+       // spottedText.GetComponentInChildren<Image>().enabled = true;
         
-        spottedText.SetActive(true);
+        spottedText.GetComponentInChildren<Text>().enabled = true;
         StartCoroutine(pauseAllActions(2f));
     }
 

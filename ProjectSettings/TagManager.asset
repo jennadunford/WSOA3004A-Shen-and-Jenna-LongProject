@@ -12,6 +12,7 @@ TagManager:
   - inventoryManager
   - pickUpText
   - Canvas
+  - exitTutLevel
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - enemyLayer
   - collectedItemLayer
   - pickPocketLayer
-  - 
+  - exitTutLayer
   - 
   - 
   - 

@@ -30,6 +30,7 @@ public class collectionScript : MonoBehaviour
         pickUpTextHolder = GameObject.Find("pickUpText");
         pickPocketTextHolder = GameObject.Find("pickPocketText");
         InventoryHandlerGlobal = GameObject.Find("GlobalInventoryManager");
+        InventoryHandlerGlobal.GetComponent<inventoryHandler>().itemsCollected.Clear();
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class collectionScript : MonoBehaviour
                 {
                     //Debug.Log(collectibleItem.gameObject.name);
                     InventoryHandlerGlobal.GetComponent<inventoryHandler>().addToInventory(collectibleItem.gameObject.name, collectibleItem.gameObject);
-
+               
 
                     collectibleItem.gameObject.SetActive(false);
                 }

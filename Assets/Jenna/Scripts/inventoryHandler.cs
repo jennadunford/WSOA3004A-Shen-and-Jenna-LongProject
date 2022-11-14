@@ -13,24 +13,22 @@ public class inventoryHandler : MonoBehaviour
     public Image[] inventoryImages;
     public Text inventoryDescription;
     public int numInvItems = 0;
-    List<itemClass> inventoryItems = new List<itemClass>();
+    public List<itemClass> inventoryItems = new List<itemClass>();
     List<itemClass> allItems = new List<itemClass>();
-    List<GameObject> itemsCollected = new List<GameObject>();
+   public List<GameObject> itemsCollected = new List<GameObject>();
 
 
     private void Awake()
     {
-        
-      
-        
+              
         //creating all the items in the game
         itemClass item0 = new itemClass();
-        item0.itemName = "Item in tutorial Level";
-        item0.itemDescription = "I am the item that is obtained in the tutorial level";
+        item0.itemName = "Tutorial Item";
+        item0.itemDescription = "I am the item that is obtained in the tutorial level! You got me!";
         item0.usable = false;
-        item0.sceneNumber = 1;
+        item0.sceneNumber = 0;
         item0.itemImage = itemImages[0];
-        item0.gameObjectName = "tutorialItem";
+        item0.gameObjectName = "item1T";
         item0.pickPocketed = false;
         allItems.Add(item0);
        // Debug.Log("Added an item to all items, the length is: " + allItems.Count);
@@ -158,7 +156,7 @@ public class inventoryHandler : MonoBehaviour
             inventorySlotNames[i].text = "";
            
         }
-        for(int i = 0; i < inventoryImages.Length; i++)
+        for(int i = 0; i < inventoryImages.Length-1; i++)
         {
             inventoryImages[i].sprite = null;
             inventoryImages[i].gameObject.SetActive(false);
