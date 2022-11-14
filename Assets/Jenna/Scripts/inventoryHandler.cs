@@ -39,7 +39,7 @@ public class inventoryHandler : MonoBehaviour
         item1.usable = false;
         item1.sceneNumber = 1;
         item1.itemImage = itemImages[1];
-        item1.gameObjectName = "item1";
+        item1.gameObjectName = "item1A";
         item1.pickPocketed = false;
         allItems.Add(item1);
         //Debug.Log("Added an item to all items, the length is: " + allItems.Count);
