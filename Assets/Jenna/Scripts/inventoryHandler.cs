@@ -115,10 +115,7 @@ public class inventoryHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            SceneManager.LoadScene(2);
-        }
+       
     }
     public void showDescription(string name)
     {
