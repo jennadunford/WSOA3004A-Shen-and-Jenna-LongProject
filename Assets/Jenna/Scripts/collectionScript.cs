@@ -10,10 +10,9 @@ public class collectionScript : MonoBehaviour
     public LayerMask collectItemLayer;
     public bool itemInRange;
 
-   // public Text collectedItemText;
-   // public Text pickPocketedText;
-    //int numItemsCollected = 0;
-    int numItemsPickPocketed = 0;
+    // public GameObject screenCanvas;
+    public GameObject pickUpTextHolder;
+    public GameObject pickPocketTextHolder;
 
     public GameObject pickUpText;
     public GameObject pickPocketText;
@@ -22,11 +21,15 @@ public class collectionScript : MonoBehaviour
 
     public GameObject InventoryHandlerGlobal;
 
-
+   
     // Start is called before the first frame update
+
+
     void Start()
     {
-
+        pickUpTextHolder = GameObject.Find("pickUpText");
+        pickPocketTextHolder = GameObject.Find("pickPocketText");
+        InventoryHandlerGlobal = GameObject.Find("GlobalInventoryManager");
     }
 
     // Update is called once per frame
@@ -67,11 +70,19 @@ public class collectionScript : MonoBehaviour
             {
                 if (tag.gameObject.tag == "clue")
                 {
-                    pickUpText.SetActive(true);
+                    // pickUpText.SetActive(true);
+                    // pickUpImage.enabled = true;
+                    // pickUpT.enabled = true;
+                    pickUpTextHolder.GetComponent<Image>().enabled = true;
+                    pickUpTextHolder.GetComponentInChildren<Text>().enabled = true;
                 }
                 else if (tag.gameObject.tag == "pickPocketTag")
                 {
-                    pickPocketText.SetActive(true);
+                    //pickPocketText.SetActive(true);
+                    //pickPocketImage.enabled = true;
+                   // pickPocketT.enabled = true;
+                    pickPocketTextHolder.GetComponent<Image>().enabled = true;
+                    pickPocketTextHolder.GetComponentInChildren<Text>().enabled = true;
                 }
             }
 
@@ -79,8 +90,17 @@ public class collectionScript : MonoBehaviour
         }
         else
         {
-            pickUpText.SetActive(false);
-            pickPocketText.SetActive(false);
+            //pickUpText.SetActive(false);
+           // pickUpImage.enabled = false;
+           // pickUpT.enabled = false;
+            pickUpTextHolder.GetComponent<Image>().enabled = false;
+            pickUpTextHolder.GetComponentInChildren<Text>().enabled = false;
+
+            //pickPocketText.SetActive(false);
+           // pickPocketImage.enabled = false;
+            pickPocketTextHolder.GetComponent<Image>().enabled = false;
+            pickPocketTextHolder.GetComponentInChildren<Text>().enabled = false;
+            //pickPocketT.enabled = false;
         }
 
     }

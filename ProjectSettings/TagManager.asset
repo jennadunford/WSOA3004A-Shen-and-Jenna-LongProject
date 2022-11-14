@@ -8,6 +8,10 @@ TagManager:
   - clue
   - turnPoint
   - audioManager
+  - pickPocketText
+  - inventoryManager
+  - pickUpText
+  - Canvas
   layers:
   - Default
   - TransparentFX
