@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 6554780589642385471}
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 2836403517606492899}
   moveSpeed: 10
   vertSpeed: 10
   lastMoveHori: 0
@@ -305,6 +305,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   itemInRange: 0
+  pickUpTextHolder: {fileID: 0}
+  pickPocketTextHolder: {fileID: 0}
   pickUpText: {fileID: 0}
   pickPocketText: {fileID: 0}
   collectiblesLayers: []
