@@ -14020,7 +14020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732588104748, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: enemyMoveSpeed
-      value: 33
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732588104748, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: enemyPatrolPoints.Array.size
