@@ -26,7 +26,7 @@ public class inventoryHandler : MonoBehaviour
         itemDogTag.itemName = "Dog Tag";
         itemDogTag.itemDescription = "A tag for a dogs' collar, it reads: The most precious baby boy. Please return to Tower Palace.";
         itemDogTag.usable = false;
-        itemDogTag.sceneNumber = 0;
+        itemDogTag.sceneNumber = 1;
         itemDogTag.itemImage = itemImages[0];
         itemDogTag.gameObjectName = "dogTag";
         itemDogTag.pickPocketed = false;
@@ -37,17 +37,91 @@ public class inventoryHandler : MonoBehaviour
         itemSchematic.itemName = "Boiler Room Schematic";
         itemSchematic.itemDescription = "A schematic of the tower boiler room, it is covered in paw prints.";
         itemSchematic.usable = false;
-        itemSchematic.sceneNumber = 1;
+        itemSchematic.sceneNumber = 2;
         itemSchematic.itemImage = itemImages[1];
+        itemSchematic.gameObjectName = "itemSchematic";
         itemSchematic.pickPocketed = false;
         itemSchematic.counted = false;
         allItems.Add(itemSchematic);
 
         itemClass wheelKey = new itemClass();
-        wheelKey.itemName = "";
+        wheelKey.itemName = "A Key for a Steam Wheel";
+        wheelKey.itemDescription = "A key used in the tower boiler room to allow the use of a steam wheel, which can shut off the flow of steam for a while";
+        wheelKey.usable = false;
+        wheelKey.sceneNumber = 2;
+        wheelKey.itemImage = itemImages[2];
+        wheelKey.gameObjectName = "wheelKey";
+        wheelKey.pickPocketed = true;
+        wheelKey.counted = false;
+        allItems.Add(wheelKey);
 
+        itemClass ruinedBook = new itemClass();
+        ruinedBook.itemName = "A Chewed Up Book";
+        ruinedBook.itemDescription = "A book about the history of the tower, it is chewed up and covered in paw prints. It has a green binding.";
+        ruinedBook.usable = false;
+        ruinedBook.sceneNumber = 3;
+        ruinedBook.itemImage = itemImages[3];
+        ruinedBook.gameObjectName = "ruinedBook";
+        ruinedBook.pickPocketed = false;
+        ruinedBook.counted = false;
+        allItems.Add(ruinedBook);
 
+        itemClass itemMatches = new itemClass();
+        itemMatches.itemName = "A Box of Matches";
+        itemMatches.itemDescription = "A box of matches from the tower library - can be used to light the Master Lantern.";
+        itemMatches.usable = false;
+        itemMatches.sceneNumber = 3;
+        itemMatches.pickPocketed = true;
+        itemMatches.itemImage = itemImages[4];
+        itemMatches.gameObjectName = "matches";
+        itemMatches.counted = false;
+        allItems.Add(itemMatches);
 
+        itemClass towerTarts = new itemClass();
+        towerTarts.itemName = "Tower Tarts";
+        towerTarts.itemDescription = "A sweet pastry enjoyed by the people of the tower. It is particularly loved by the guards, who will drop everything to eat one of these tasty treats.";
+        towerTarts.usable = true;
+        towerTarts.sceneNumber = 4;
+        towerTarts.pickPocketed = false;
+        towerTarts.itemImage = itemImages[5];
+        towerTarts.gameObjectName = "towerTarts";
+        towerTarts.counted = true;
+        towerTarts.maxCount = 5;
+        towerTarts.counter = 0;
+        allItems.Add(towerTarts);
+
+        itemClass leverChewed = new itemClass();
+        leverChewed.itemName = "An Old Chewed Up Lever";
+        leverChewed.itemDescription = "A freshly chewed up lever used in the tower dungeon. It had a coat of green paint on it. There must be a spare lever.";
+        leverChewed.usable = false;
+        leverChewed.sceneNumber = 5;
+        leverChewed.pickPocketed = false;
+        leverChewed.itemImage = itemImages[6];
+        leverChewed.gameObjectName = "leverChewed";
+        leverChewed.counted = false;
+        allItems.Add(leverChewed);
+
+        itemClass dailyLog = new itemClass();
+        dailyLog.itemName = "A Guard's Daily Log";
+        dailyLog.itemDescription = "The daily log from one of the tower guards. It notes that a few minutes ago a dog ran through here with something green in its mouth. The log also notes that it was probably not important or anything.";
+        dailyLog.usable = false;
+        dailyLog.sceneNumber = 5;
+        dailyLog.pickPocketed = true;
+        dailyLog.itemImage = itemImages[7];
+        dailyLog.gameObjectName = "dailyLog";
+        dailyLog.counted = false;
+        allItems.Add(dailyLog);
+
+        itemClass emeraldHolder = new itemClass();
+        emeraldHolder.itemName = "A Glass Casing";
+        emeraldHolder.itemDescription = "The glass casing that held the tower's emerald. It is covered in paw prints and dog slobber.";
+        emeraldHolder.usable = false;
+        emeraldHolder.sceneNumber = 6;
+        emeraldHolder.pickPocketed = false;
+        emeraldHolder.itemImage = itemImages[8];
+        emeraldHolder.gameObjectName = "emeraldHolder";
+        emeraldHolder.counted = false;
+        allItems.Add(emeraldHolder);
 
     }
 
@@ -68,6 +142,12 @@ public class inventoryHandler : MonoBehaviour
         if(indexVal <inventoryItems.Count)
         {
             inventoryDescription.text = inventoryItems[indexVal].getDescription();
+            if (inventoryItems[indexVal].usable)
+            {
+                Debug.Log("Show button for usability");
+                Debug.Log("Also show how many items of object");
+
+            }
         }
         else
         {
