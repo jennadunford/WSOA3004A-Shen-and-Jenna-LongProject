@@ -22,91 +22,38 @@ public class inventoryHandler : MonoBehaviour
     {
               
         //creating all the items in the game
-        itemClass item0 = new itemClass();
-        item0.itemName = "Tutorial Item";
-        item0.itemDescription = "I am the item that is obtained in the tutorial level! You got me!";
-        item0.usable = false;
-        item0.sceneNumber = 0;
-        item0.itemImage = itemImages[0];
-        item0.gameObjectName = "item1T";
-        item0.pickPocketed = false;
-        allItems.Add(item0);
-       // Debug.Log("Added an item to all items, the length is: " + allItems.Count);
+        itemClass itemDogTag = new itemClass();
+        itemDogTag.itemName = "Dog Tag";
+        itemDogTag.itemDescription = "A tag for a dogs' collar, it reads: The most precious baby boy. Please return to Tower Palace.";
+        itemDogTag.usable = false;
+        itemDogTag.sceneNumber = 0;
+        itemDogTag.itemImage = itemImages[0];
+        itemDogTag.gameObjectName = "dogTag";
+        itemDogTag.pickPocketed = false;
+        itemDogTag.counted = false;
+        allItems.Add(itemDogTag);
 
-        itemClass item1 = new itemClass();
-        item1.itemName = "First item in level 1";
-        item1.itemDescription = "I am the first item to be collected in the first level";
-        item1.usable = false;
-        item1.sceneNumber = 1;
-        item1.itemImage = itemImages[1];
-        item1.gameObjectName = "item1A";
-        item1.pickPocketed = false;
-        allItems.Add(item1);
-        //Debug.Log("Added an item to all items, the length is: " + allItems.Count);
+        itemClass itemSchematic = new itemClass();
+        itemSchematic.itemName = "Boiler Room Schematic";
+        itemSchematic.itemDescription = "A schematic of the tower boiler room, it is covered in paw prints.";
+        itemSchematic.usable = false;
+        itemSchematic.sceneNumber = 1;
+        itemSchematic.itemImage = itemImages[1];
+        itemSchematic.pickPocketed = false;
+        itemSchematic.counted = false;
+        allItems.Add(itemSchematic);
 
-        itemClass item2 = new itemClass();
-        item2.itemName = "Second Item in Level 1";
-        item2.itemDescription = "I am the second item to be collected in the first level";
-        item2.usable = false;
-        item2.sceneNumber = 1;
-        item2.itemImage = itemImages[2];
-        item2.gameObjectName = "item2";
-        item2.pickPocketed = false;
-        allItems.Add(item2);
-        // Debug.Log("Added an item to all items, the length is: " + allItems.Count);
+        itemClass wheelKey = new itemClass();
+        wheelKey.itemName = "";
 
-        itemClass pItem1 = new itemClass();
-        pItem1.itemName = "First pickpocketed Item";
-        pItem1.itemDescription = "I am the first item pickpocketed from a guard!";
-        pItem1.usable = false;
-        pItem1.sceneNumber = 1;
-        pItem1.itemImage = itemImages[3];
-        pItem1.gameObjectName = "pickPocketPoint1";
-        pItem1.pickPocketed = true;
-        allItems.Add(pItem1);
-         
-   
+
+
+
     }
 
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        /*
-       DontDestroyOnLoad(this.gameObject);
-
-       
-
-        //creating all the items in the game
-        itemClass item0 = new itemClass();
-        item0.itemName = "Item in tutorial Level";
-        item0.itemDescription = "I am the item that is obtained in the tutorial level";
-        item0.usable = false;
-        item0.sceneNumber = 1;
-        item0.itemImage = itemImages[0];
-        item0.gameObjectName = "tutorialItem";
-        allItems.Add(item0);
-        Debug.Log("Added an item to all items, the length is: " + allItems.Count);
-
-        itemClass item1 = new itemClass();
-        item1.itemName = "First item in level 1";
-        item1.itemDescription = "I am the first item to be collected in the first level";
-        item1.usable = false;
-        item1.sceneNumber = 1;
-        item1.itemImage = itemImages[1];
-        item1.gameObjectName = "item1";
-        allItems.Add(item1);
-        Debug.Log("Added an item to all items, the length is: " + allItems.Count);
-
-        itemClass item2 = new itemClass();
-        item2.itemName = "Second Item in Level 1";
-        item2.itemDescription = "I am the second item to be collected in the first level";
-        item2.usable = false;
-        item2.sceneNumber = 1;
-        item2.itemImage = itemImages[2];
-        item2.gameObjectName = "item2";
-        allItems.Add(item2);
-        Debug.Log("Added an item to all items, the length is: " + allItems.Count);
-       */
     }
 
     // Update is called once per frame
@@ -218,6 +165,9 @@ public class itemClass
     public Sprite itemImage;
     public string gameObjectName;
     public bool pickPocketed;
+    public bool counted;
+    public int counter = 0;
+    public int maxCount;
 
   public string getDescription()
     {
