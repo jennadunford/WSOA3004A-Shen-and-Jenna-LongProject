@@ -2238,6 +2238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 78664654}
+  - {fileID: 2018114949}
 --- !u!4 &390816990
 Transform:
   m_ObjectHideFlags: 0
@@ -8035,6 +8036,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy2
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1476039172}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 1476039171}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 863292044}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 633652580}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -8097,6 +8114,11 @@ PrefabInstance:
       objectReference: {fileID: 120087092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+--- !u!1 &2018114949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4287518732588104738, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+  m_PrefabInstance: {fileID: 2018114948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2112458321
 GameObject:
   m_ObjectHideFlags: 0
