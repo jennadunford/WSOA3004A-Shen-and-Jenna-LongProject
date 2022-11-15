@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Whistle : MonoBehaviour
 {
     public Transform whistlePoint;
-    public float whistleRange = 5f;
+    public float whistleRange = 9f;
     public LayerMask enemyLayer;
     public bool whistling = false;
 
@@ -17,6 +17,10 @@ public class Player_Whistle : MonoBehaviour
     public bool whistleCoolDownOver = true;
 
     public GameObject playerObject;
+
+  
+
+    public Transform newWhistlePosition;
 
 
     // Start is called before the first frame update
@@ -36,6 +40,7 @@ public class Player_Whistle : MonoBehaviour
             if (whistleCoolDownOver && remainingWhistleTime == totalWhistleTime)
             {
                 whistling = true;
+                newWhistlePosition = transform;
                 playerObject.GetComponent<SpriteRenderer>().color = Color.green;
             }
         }
@@ -55,10 +60,12 @@ public class Player_Whistle : MonoBehaviour
         {
             //need to make this an if condition based on enemy tag as well
             Collider2D[] enemies = Physics2D.OverlapCircleAll(whistlePoint.position, whistleRange, enemyLayer);
-
+           
             foreach (Collider2D distractedEnemy in enemies)
             {
                 Debug.Log(distractedEnemy.gameObject.name + " is distracted now");
+                distractedEnemy.GetComponent<enemyFOVRotate>().rotateToDistraction(newWhistlePosition);
+                distractedEnemy.GetComponent<enemyFOVRotate>().distracted = true;
             }
 
             remainingWhistleTime -= Time.deltaTime; //fixed delta time is for fixed update, update just uses delta time
