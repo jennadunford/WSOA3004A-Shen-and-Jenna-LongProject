@@ -34,7 +34,7 @@ public class inventoryHandler : MonoBehaviour
         allItems.Add(itemDogTag);
 
         itemClass itemSchematic = new itemClass();
-        itemSchematic.itemName = "Boiler Room Schematic";
+        itemSchematic.itemName = "Boiler Schematic";
         itemSchematic.itemDescription = "A schematic of the tower boiler room, it is covered in paw prints.";
         itemSchematic.usable = false;
         itemSchematic.sceneNumber = 2;
@@ -45,7 +45,7 @@ public class inventoryHandler : MonoBehaviour
         allItems.Add(itemSchematic);
 
         itemClass wheelKey = new itemClass();
-        wheelKey.itemName = "A Key for a Steam Wheel";
+        wheelKey.itemName = "Steam Wheel Key";
         wheelKey.itemDescription = "A key used in the tower boiler room to allow the use of a steam wheel, which can shut off the flow of steam for a while";
         wheelKey.usable = false;
         wheelKey.sceneNumber = 2;
@@ -56,7 +56,7 @@ public class inventoryHandler : MonoBehaviour
         allItems.Add(wheelKey);
 
         itemClass ruinedBook = new itemClass();
-        ruinedBook.itemName = "A Chewed Up Book";
+        ruinedBook.itemName = "Chewed Up Book";
         ruinedBook.itemDescription = "A book about the history of the tower, it is chewed up and covered in paw prints. It has a green binding.";
         ruinedBook.usable = false;
         ruinedBook.sceneNumber = 3;
@@ -67,7 +67,7 @@ public class inventoryHandler : MonoBehaviour
         allItems.Add(ruinedBook);
 
         itemClass itemMatches = new itemClass();
-        itemMatches.itemName = "A Box of Matches";
+        itemMatches.itemName = "Box of Matches";
         itemMatches.itemDescription = "A box of matches from the tower library - can be used to light the Master Lantern.";
         itemMatches.usable = false;
         itemMatches.sceneNumber = 3;
@@ -91,7 +91,7 @@ public class inventoryHandler : MonoBehaviour
         allItems.Add(towerTarts);
 
         itemClass leverChewed = new itemClass();
-        leverChewed.itemName = "An Old Chewed Up Lever";
+        leverChewed.itemName = "Chewed Up Lever";
         leverChewed.itemDescription = "A freshly chewed up lever used in the tower dungeon. It had a coat of green paint on it. There must be a spare lever.";
         leverChewed.usable = false;
         leverChewed.sceneNumber = 5;
@@ -102,7 +102,7 @@ public class inventoryHandler : MonoBehaviour
         allItems.Add(leverChewed);
 
         itemClass dailyLog = new itemClass();
-        dailyLog.itemName = "A Guard's Daily Log";
+        dailyLog.itemName = "Daily Log";
         dailyLog.itemDescription = "The daily log from one of the tower guards. It notes that a few minutes ago a dog ran through here with something green in its mouth. The log also notes that it was probably not important or anything.";
         dailyLog.usable = false;
         dailyLog.sceneNumber = 5;
@@ -113,7 +113,7 @@ public class inventoryHandler : MonoBehaviour
         allItems.Add(dailyLog);
 
         itemClass emeraldHolder = new itemClass();
-        emeraldHolder.itemName = "A Glass Casing";
+        emeraldHolder.itemName = "Glass Casing";
         emeraldHolder.itemDescription = "The glass casing that held the tower's emerald. It is covered in paw prints and dog slobber.";
         emeraldHolder.usable = false;
         emeraldHolder.sceneNumber = 6;
@@ -192,7 +192,7 @@ public class inventoryHandler : MonoBehaviour
         for (int i = 0; i< inventoryItems.Count; i++)
         {
             inventorySlotNames[i].text = inventoryItems[i].getName();
-            inventoryImages[i].sprite = itemImages[i];
+            inventoryImages[i].sprite = inventoryItems[i].itemImage;
             inventoryImages[i].gameObject.SetActive(true);
         }
     }
