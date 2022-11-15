@@ -13,9 +13,14 @@ public class sceneTransitionTesting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("changed scene");
+            Debug.Log("changed scene forwards");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.Log("changed scene backwards");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 }
