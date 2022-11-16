@@ -48,7 +48,8 @@ public class playerMovement : MonoBehaviour
         playerDirection = new Vector2(lastMoveHori, lastMoveVert);
 
         playerAnimator.SetFloat("horiSpeed", playerVel.y);
-        
+        //playerAnimator.SetFloat("vertSpeed", playerVel.x);
+
 
         if (moveHori != 0)
         {

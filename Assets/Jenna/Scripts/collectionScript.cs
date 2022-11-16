@@ -26,12 +26,15 @@ public class collectionScript : MonoBehaviour
 
     private GameObject temp;
 
-   
+    public GameObject audioManager;
+
+
     // Start is called before the first frame update
 
 
     void Start()
     {
+        audioManager = GameObject.Find("Audio Manager");
         keyTextHolder = GameObject.Find("keyText");
         pickUpTextHolder = GameObject.Find("pickUpText");
         pickPocketTextHolder = GameObject.Find("pickPocketText");
@@ -64,7 +67,8 @@ public class collectionScript : MonoBehaviour
 
                     InventoryHandlerGlobal.GetComponent<inventoryHandler>().addToInventory(collectibleItem.gameObject.name, collectibleItem.gameObject);
                     collectibleItem.gameObject.tag = "Untagged";
-
+                    //
+                    audioManager.GetComponent<audioManagement>().playerPickPocket();
                     pickPocketTextHolder.GetComponent<Image>().enabled = false;
                     pickPocketTextHolder.GetComponentInChildren<Text>().enabled = false;
 
@@ -193,7 +197,7 @@ public class collectionScript : MonoBehaviour
             keyTextHolder.GetComponentInChildren<Text>().enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)  && InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Tower Tarts"))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown("joystick button 2") && InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Tower Tarts"))
         {
 
             InventoryHandlerGlobal.GetComponent<inventoryHandler>().decreaseTarts(transform);

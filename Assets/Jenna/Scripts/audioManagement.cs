@@ -17,4 +17,16 @@ public class audioManagement : MonoBehaviour
         audioS.volume = 0.125f;
         audioS.PlayOneShot(sounds[0]);       
     }
+
+    public void playerWhistle()
+    {
+        audioS.volume = 0.125f;
+        audioS.PlayOneShot(sounds[1]);
+    }
+
+    public void playerPickPocket()
+    {
+        audioS.volume = 0.125f;
+        audioS.PlayOneShot(sounds[2]);
+    }
 }

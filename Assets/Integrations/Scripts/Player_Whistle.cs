@@ -23,10 +23,13 @@ public class Player_Whistle : MonoBehaviour
 
     public Transform newWhistlePosition;
 
+    public GameObject audioManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.Find("Audio Manager");
         circleRange.SetActive(false);
         remainingWhistleTime = totalWhistleTime;
         whistling = false;
@@ -37,13 +40,14 @@ public class Player_Whistle : MonoBehaviour
     void Update()
     {
 
-        if (!whistling && (Input.GetKeyDown(KeyCode.K) /*|| Input.GetKeyDown("joystick button 1")*/))
+        if (!whistling && (Input.GetKeyDown(KeyCode.K)) || Input.GetKeyDown("joystick button 3"))
         {
             if (whistleCoolDownOver && remainingWhistleTime == totalWhistleTime)
             {
                 whistling = true;
                 newWhistlePosition = transform;
-                playerObject.GetComponent<SpriteRenderer>().color = Color.green;
+                audioManager.GetComponent<audioManagement>().playerWhistle();
+                //playerObject.GetComponent<SpriteRenderer>().color = Color.green;
                 circleRange.SetActive(true);
 
             }
