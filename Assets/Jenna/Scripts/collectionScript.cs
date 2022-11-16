@@ -82,7 +82,7 @@ public class collectionScript : MonoBehaviour
                     if (InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Steam Wheel Key"))
                     {
                         Debug.Log("Can turn wheel");
-                        GameObject steam = GameObject.Find("steamCollider");
+                        GameObject steam = GameObject.Find("steamHolder");
                         steam.SetActive(false);
                         temp = steam;
                         Invoke("turnBackOn", 5f);
