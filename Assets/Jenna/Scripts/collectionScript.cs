@@ -58,6 +58,8 @@ public class collectionScript : MonoBehaviour
                     InventoryHandlerGlobal.GetComponent<inventoryHandler>().addToInventory(collectibleItem.gameObject.name, collectibleItem.gameObject);
                     collectibleItem.gameObject.tag = "Untagged";
 
+                    pickPocketTextHolder.GetComponent<Image>().enabled = false;
+                    pickPocketTextHolder.GetComponentInChildren<Text>().enabled = false;
 
                 }
 

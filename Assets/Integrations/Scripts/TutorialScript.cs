@@ -21,10 +21,10 @@ public class TutorialScript : MonoBehaviour
     {
         if(trig.tag == "exitTutLevel")
         {
-            Debug.Log("in trigger");
+            //Debug.Log("in trigger");
             for(int i = 0; i < InventoryHandlerGlobalT.GetComponent<inventoryHandler>().inventoryItems.Count; i++)
             {
-                if(InventoryHandlerGlobalT.GetComponent<inventoryHandler>().inventoryItems[i].itemName == "Tutorial Item")
+                if(InventoryHandlerGlobalT.GetComponent<inventoryHandler>().inventoryItems[i].itemName == "Dog Tag")
                 {
                     Debug.Log("Inside the if statement");
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

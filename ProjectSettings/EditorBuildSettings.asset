@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Jenna/Scenes/Level2.unity
     guid: 46c01a8773b712148a10d3f576d663f7
   - enabled: 1
+    path: Assets/Integrations/Game Scenes/Menu.unity
+    guid: b9c2b14006f1a4d449cb1764fd7f0219
+  - enabled: 1
     path: Assets/Integrations/Game Scenes/TutorialLevel.unity
     guid: 0da5710f9ebbca748ad0fa03b9bafab5
   - enabled: 1
