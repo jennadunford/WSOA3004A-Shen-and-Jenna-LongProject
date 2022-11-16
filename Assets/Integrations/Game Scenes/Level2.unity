@@ -4120,11 +4120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6554780589642385468, guid: 67d81268effbad347b61ea72e2920353, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 96.9
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 6554780589642385468, guid: 67d81268effbad347b61ea72e2920353, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.3
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6554780589642385468, guid: 67d81268effbad347b61ea72e2920353, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4275,7 +4275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941126870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.9, y: -25.3, z: -10}
+  m_LocalPosition: {x: -12, y: -9.999999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11374,15 +11374,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732304518034, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_PointLightInnerAngle
-      value: 65
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732304518034, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_PointLightOuterAngle
-      value: 65
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732304518034, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732588104738, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_Name
@@ -11394,7 +11394,7 @@ PrefabInstance:
       objectReference: {fileID: 27722056}
     - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: viewRange
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: targetPoint
@@ -11406,7 +11406,7 @@ PrefabInstance:
       objectReference: {fileID: 1319423522}
     - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: fieldOfViewAngle
-      value: 65
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: playerRespawnPoint
@@ -11738,7 +11738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637366215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 91.9, y: -26.3, z: 0}
+  m_LocalPosition: {x: -12, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12312,7 +12312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900067355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.9, y: -25.3, z: -10}
+  m_LocalPosition: {x: -12, y: -9.999999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

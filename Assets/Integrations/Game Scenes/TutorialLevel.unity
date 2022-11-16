@@ -14878,7 +14878,6 @@ MonoBehaviour:
   Level2Goals: {fileID: 369195451}
   Level3Goals: {fileID: 1082576080}
   Level4Goals: {fileID: 1494744072}
-  Level5Goals: {fileID: 929672052}
 --- !u!4 &1640011065
 Transform:
   m_ObjectHideFlags: 0
@@ -16732,6 +16731,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8388771885839175924, guid: 833b61cd7886abf4c91abadb0ccab452, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388771885839175925, guid: 833b61cd7886abf4c91abadb0ccab452, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8388771885839175926, guid: 833b61cd7886abf4c91abadb0ccab452, type: 3}
