@@ -19,6 +19,11 @@ TagManager:
   - Lantern
   - whistleTeach
   - tart
+  - exitLev2
+  - exitLev1
+  - exitLev4
+  - exitLev3
+  - exit
   layers:
   - Default
   - TransparentFX

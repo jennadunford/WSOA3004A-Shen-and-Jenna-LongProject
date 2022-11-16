@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
@@ -178,16 +179,24 @@ public class playerMovement : MonoBehaviour
             //playerRigidBody.velocity = new Vector2(50f, 50f);
         }
 
-        //playerAnimator.SetFloat("Speed", Mathf.Abs(moveHori));                                      //setting the speed parameter for when the movement animation needs to be called
+        //playerAnimator.SetFloat("Speed", Mathf.Abs(moveHori));                                      
+        //setting the speed parameter for when the movement animation needs to be called
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "steam")
         {
-            //GameObject steamTransformObj = GameObject.Find("steamResetPoint");
-            //transform.position = steamTransformObj.GetComponent<Transform>().position;
             transform.position = new Vector3(transform.position.x - 15, transform.position.y, transform.position.z);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "exit")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+
         }
     }
 

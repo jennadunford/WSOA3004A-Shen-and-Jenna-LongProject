@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class inventoryHandler : MonoBehaviour
 {
     public Sprite[] itemImages;
-   // public List<itemClass> inventoryItems;
-   // public List<itemClass> allItems;
+    // public List<itemClass> inventoryItems;
+    // public List<itemClass> allItems;
+    public GameObject canvas;
     public Text[] inventorySlotNames;
     public Image[] inventoryImages;
     public Text inventoryDescription;
@@ -28,7 +29,6 @@ public class inventoryHandler : MonoBehaviour
     public GameObject Level2Goals;
     public GameObject Level3Goals;
     public GameObject Level4Goals;
-    public GameObject Level5Goals;
 
 
     private void Awake()
@@ -129,7 +129,7 @@ public class inventoryHandler : MonoBehaviour
         emeraldHolder.itemName = "Glass Casing";
         emeraldHolder.itemDescription = "The glass casing that held the tower's emerald. It is covered in paw prints and dog slobber.";
         emeraldHolder.usable = false;
-        emeraldHolder.sceneNumber = 6;
+        emeraldHolder.sceneNumber = 5;
         emeraldHolder.pickPocketed = false;
         emeraldHolder.itemImage = itemImages[8];
         emeraldHolder.gameObjectName = "emeraldHolder";
@@ -156,7 +156,7 @@ public class inventoryHandler : MonoBehaviour
                 Level2Goals.SetActive(false);
                 Level3Goals.SetActive(false);
                 Level4Goals.SetActive(false);
-                Level5Goals.SetActive(false);
+    
                 break;
             case 2:
                 tutorialLevelGoals.SetActive(false);
@@ -164,7 +164,7 @@ public class inventoryHandler : MonoBehaviour
                 Level2Goals.SetActive(false);
                 Level3Goals.SetActive(false);
                 Level4Goals.SetActive(false);
-                Level5Goals.SetActive(false);
+
                 break;
             case 3:
                 tutorialLevelGoals.SetActive(false);
@@ -172,7 +172,7 @@ public class inventoryHandler : MonoBehaviour
                 Level2Goals.SetActive(true);
                 Level3Goals.SetActive(false);
                 Level4Goals.SetActive(false);
-                Level5Goals.SetActive(false);
+
                 break;
             case 4:
                 tutorialLevelGoals.SetActive(false);
@@ -180,7 +180,7 @@ public class inventoryHandler : MonoBehaviour
                 Level2Goals.SetActive(false);
                 Level3Goals.SetActive(true);
                 Level4Goals.SetActive(false);
-                Level5Goals.SetActive(false);
+
                 break;
             case 5:
                 tutorialLevelGoals.SetActive(false);
@@ -188,15 +188,10 @@ public class inventoryHandler : MonoBehaviour
                 Level2Goals.SetActive(false);
                 Level3Goals.SetActive(false);
                 Level4Goals.SetActive(true);
-                Level5Goals.SetActive(false);
+
                 break;
             case 6:
-                tutorialLevelGoals.SetActive(false);
-                Level1Goals.SetActive(false);
-                Level2Goals.SetActive(false);
-                Level3Goals.SetActive(false);
-                Level4Goals.SetActive(false);
-                Level5Goals.SetActive(true);
+                canvas.SetActive(false);
                 break;
         }
     }

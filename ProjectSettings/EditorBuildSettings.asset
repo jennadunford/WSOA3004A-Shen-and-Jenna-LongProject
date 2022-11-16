@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Jenna/Scenes/Level2.unity
     guid: 46c01a8773b712148a10d3f576d663f7
+  - enabled: 0
+    path: Assets/Integrations/Game Scenes/Level4.unity
+    guid: 3fa42368f1653c6469f2ef81c59bf531
   - enabled: 1
     path: Assets/Integrations/Game Scenes/Menu.unity
     guid: b9c2b14006f1a4d449cb1764fd7f0219
@@ -36,9 +39,9 @@ EditorBuildSettings:
     path: Assets/Integrations/Game Scenes/Level3.unity
     guid: e5f4e40604bb6f04c831ee55c2bbcd5c
   - enabled: 1
-    path: Assets/Integrations/Game Scenes/Level4.unity
-    guid: 3fa42368f1653c6469f2ef81c59bf531
-  - enabled: 1
     path: Assets/Integrations/Game Scenes/Level5.unity
     guid: c083153339ee65e4582cae5f0a6849b3
+  - enabled: 1
+    path: Assets/Integrations/Game Scenes/EndScene.unity
+    guid: 32dfb497da00f7547a7728297b8171be
   m_configObjects: {}
