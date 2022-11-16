@@ -17,10 +17,13 @@ public class collectionScript : MonoBehaviour
     public GameObject pickUpText;
     public GameObject pickPocketText;
     public GameObject tartHolder;
+    public GameObject keyTextHolder;
 
     public LayerMask[] collectiblesLayers;
 
     public GameObject InventoryHandlerGlobal;
+
+    private GameObject temp;
 
    
     // Start is called before the first frame update
@@ -28,6 +31,7 @@ public class collectionScript : MonoBehaviour
 
     void Start()
     {
+        keyTextHolder = GameObject.Find("keyText");
         pickUpTextHolder = GameObject.Find("pickUpText");
         pickPocketTextHolder = GameObject.Find("pickPocketText");
         tartHolder = GameObject.Find("tartText");
@@ -68,6 +72,17 @@ public class collectionScript : MonoBehaviour
                 {
                     InventoryHandlerGlobal.GetComponent<inventoryHandler>().increaseTarts();
                 }
+                else if(collectibleItem.gameObject.tag == "Wheel")
+                {
+                    if (InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Steam Wheel Key"))
+                    {
+                        Debug.Log("Can turn wheel");
+                        GameObject steam = GameObject.Find("steamCollider");
+                        steam.SetActive(false);
+                        temp = steam;
+                        Invoke("turnBackOn", 5f);
+                    }
+                }
 
             }
         }
@@ -98,6 +113,20 @@ public class collectionScript : MonoBehaviour
                     tartHolder.GetComponent<Image>().enabled = true;
                     tartHolder.GetComponentInChildren<Text>().enabled = true;
                 }
+                else if(tag.gameObject.tag == "Wheel")
+                {
+                    if (InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Steam Wheel Key"))
+                    {
+                        keyTextHolder.GetComponent<Image>().enabled = true;
+                        keyTextHolder.GetComponentInChildren<Text>().enabled = true;
+                       // Debug.Log("Has key");
+                    }
+                    else
+                    {
+                       // Debug.Log("No key");
+                    }
+                    
+                }
             }
 
 
@@ -117,6 +146,9 @@ public class collectionScript : MonoBehaviour
             //pickPocketT.enabled = false;
             tartHolder.GetComponent<Image>().enabled = false;
             tartHolder.GetComponentInChildren<Text>().enabled = false;
+
+            keyTextHolder.GetComponent<Image>().enabled = false;
+            keyTextHolder.GetComponentInChildren<Text>().enabled = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Q)  && InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Tower Tarts"))
@@ -124,6 +156,12 @@ public class collectionScript : MonoBehaviour
 
             InventoryHandlerGlobal.GetComponent<inventoryHandler>().decreaseTarts();
         }
+
+    }
+
+    public void turnBackOn()
+    {
+        temp.SetActive(true);
 
     }
 

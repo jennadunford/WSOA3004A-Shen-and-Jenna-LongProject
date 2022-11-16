@@ -14,6 +14,8 @@ TagManager:
   - Canvas
   - exitTutLevel
   - tartHolder
+  - Wheel
+  - steam
   layers:
   - Default
   - TransparentFX

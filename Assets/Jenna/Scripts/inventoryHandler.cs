@@ -148,12 +148,12 @@ public class inventoryHandler : MonoBehaviour
         if(indexVal <inventoryItems.Count)
         {
             inventoryDescription.text = inventoryItems[indexVal].getDescription();
-            if (inventoryItems[indexVal].usable)
+           /* if (inventoryItems[indexVal].usable)
             {
                 Debug.Log("Show button for usability");
                 Debug.Log("Also show how many items of object");
 
-            }
+            }*/
         }
         else
         {
@@ -168,18 +168,18 @@ public class inventoryHandler : MonoBehaviour
         //Debug.Log("Length of item list: " + allItems.Count);
        for(int i = 0; i < allItems.Count; i++)
         {
-            Debug.Log("testing");
+           // Debug.Log("testing");
             //Debug.Log(allItems[i].getGameObjectName());
             if(allItems[i].getGameObjectName() == name)
             {
-                Debug.Log("Found item");
+                //Debug.Log("Found item");
                // Debug.Log("We have found " + allItems[i].getGameObjectName());
                 inventoryItems.Add(allItems[i]);
-                Debug.Log("Added to inventory items");
+                //Debug.Log("Added to inventory items");
                 itemsCollected.Add(item);
-                Debug.Log("Added to items collected");
+                //Debug.Log("Added to items collected");
                updateInventory();
-                Debug.Log("Inventory updated");
+               // Debug.Log("Inventory updated");
                 break;
             }
         }
@@ -195,13 +195,13 @@ public class inventoryHandler : MonoBehaviour
             inventorySlotNames[i].text = "";
 
         }
-        Debug.Log("Cleared slot names");
+        //Debug.Log("Cleared slot names");
         for (int i = 0; i < inventoryImages.Length - 1; i++)
         {
             inventoryImages[i].sprite = null;
             inventoryImages[i].gameObject.SetActive(false);
         }
-        Debug.Log("Cleared Images");
+       // Debug.Log("Cleared Images");
         //update with new info
         for (int i = 0; i < inventoryItems.Count; i++)
         {
@@ -209,19 +209,19 @@ public class inventoryHandler : MonoBehaviour
             inventoryImages[i].sprite = inventoryItems[i].itemImage;
             inventoryImages[i].gameObject.SetActive(true);
         }
-        Debug.Log("Set items images");
+       // Debug.Log("Set items images");
 
         if (hasItem("Tower Tarts"))
         {
             tartCount.text = inventoryItems[getInventoryIndex("TowerTarts")].counter.ToString();
-            Debug.Log("Does have tower tarts item");
+           // Debug.Log("Does have tower tarts item");
             tartHolder.SetActive(true);
             if (inventoryItems[getInventoryIndex("TowerTarts")].counter < inventoryItems[getInventoryIndex("TowerTarts")].maxCount)
             {
                 
-                Debug.Log("Index where tarts are at index: " + getInventoryIndex("TowerTarts"));
+               // Debug.Log("Index where tarts are at index: " + getInventoryIndex("TowerTarts"));
                 tartInfo.text = "Get Tarts";
-                Debug.Log("Get tarts works");
+                //Debug.Log("Get tarts works");
             }else if(inventoryItems[getInventoryIndex("TowerTarts")].counter == inventoryItems[getInventoryIndex("TowerTarts")].maxCount)
             {
                 tartInfo.text = "Tarts are at Max";
@@ -279,8 +279,8 @@ public class inventoryHandler : MonoBehaviour
 
         if (hasItem("Tower Tarts"))
         {
-            Debug.Log("Tower tarts current count: " + inventoryItems[getInventoryIndex("TowerTarts")].counter);
-            Debug.Log("Tower tarts max count: " + inventoryItems[getInventoryIndex("TowerTarts")].maxCount);
+            //Debug.Log("Tower tarts current count: " + inventoryItems[getInventoryIndex("TowerTarts")].counter);
+            //Debug.Log("Tower tarts max count: " + inventoryItems[getInventoryIndex("TowerTarts")].maxCount);
             if(inventoryItems[getInventoryIndex("TowerTarts")].counter < inventoryItems[getInventoryIndex("TowerTarts")].getMaxCount())
             {
                 inventoryItems[getInventoryIndex("TowerTarts")].counter = inventoryItems[getInventoryIndex("TowerTarts")].getMaxCount();
@@ -309,7 +309,7 @@ public class inventoryHandler : MonoBehaviour
             }
             else
             {
-                Debug.Log("no more tarts left");
+                //Debug.Log("no more tarts left");
                 updateInventory();
             }
         }
@@ -342,7 +342,7 @@ public class inventoryHandler : MonoBehaviour
         {
             if (inventoryItems[i].itemName == itemName)
             {
-                Debug.Log("The index is: " + i);
+               // Debug.Log("The index is: " + i);
                 output = i;
                 break;
             }

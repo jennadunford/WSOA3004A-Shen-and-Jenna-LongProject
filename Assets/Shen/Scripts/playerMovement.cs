@@ -28,6 +28,7 @@ public class playerMovement : MonoBehaviour
 
     Vector2 playerDirection;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -180,6 +181,14 @@ public class playerMovement : MonoBehaviour
         //playerAnimator.SetFloat("Speed", Mathf.Abs(moveHori));                                      //setting the speed parameter for when the movement animation needs to be called
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "steam")
+        {
+            //GameObject steamTransformObj = GameObject.Find("steamResetPoint");
+            //transform.position = steamTransformObj.GetComponent<Transform>().position;
+            transform.position = new Vector3(transform.position.x - 15, transform.position.y, transform.position.z);
+        }
+    }
 
-    
 }
