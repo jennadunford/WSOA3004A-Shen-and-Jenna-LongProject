@@ -16,11 +16,15 @@ public class inventoryHandler : MonoBehaviour
     public List<itemClass> inventoryItems = new List<itemClass>();
     List<itemClass> allItems = new List<itemClass>();
    public List<GameObject> itemsCollected = new List<GameObject>();
+    public GameObject tartHolder;
+    public Text tartCount;
+
+    public Text tartInfo;
 
 
     private void Awake()
     {
-              
+        tartInfo.text = "Has not unlocked tarts";
         //creating all the items in the game
         itemClass itemDogTag = new itemClass();
         itemDogTag.itemName = "Dog Tag";
@@ -81,7 +85,7 @@ public class inventoryHandler : MonoBehaviour
         towerTarts.itemName = "Tower Tarts";
         towerTarts.itemDescription = "A sweet pastry enjoyed by the people of the tower. It is particularly loved by the guards, who will drop everything to eat one of these tasty treats.";
         towerTarts.usable = true;
-        towerTarts.sceneNumber = 4;
+        towerTarts.sceneNumber = 10;
         towerTarts.pickPocketed = false;
         towerTarts.itemImage = itemImages[5];
         towerTarts.gameObjectName = "towerTarts";
@@ -123,6 +127,8 @@ public class inventoryHandler : MonoBehaviour
         emeraldHolder.counted = false;
         allItems.Add(emeraldHolder);
 
+        //updateInventory();
+
     }
 
     void Start()
@@ -162,13 +168,18 @@ public class inventoryHandler : MonoBehaviour
         //Debug.Log("Length of item list: " + allItems.Count);
        for(int i = 0; i < allItems.Count; i++)
         {
+            Debug.Log("testing");
             //Debug.Log(allItems[i].getGameObjectName());
             if(allItems[i].getGameObjectName() == name)
             {
+                Debug.Log("Found item");
                // Debug.Log("We have found " + allItems[i].getGameObjectName());
                 inventoryItems.Add(allItems[i]);
+                Debug.Log("Added to inventory items");
                 itemsCollected.Add(item);
+                Debug.Log("Added to items collected");
                updateInventory();
+                Debug.Log("Inventory updated");
                 break;
             }
         }
@@ -176,24 +187,50 @@ public class inventoryHandler : MonoBehaviour
 
     public void updateInventory()
     {
+        
         inventoryDescription.text = "";
         //clear everything that was there before
         for (int i = 0; i < inventorySlotNames.Length; i++)
         {
             inventorySlotNames[i].text = "";
-           
+
         }
-        for(int i = 0; i < inventoryImages.Length-1; i++)
+        Debug.Log("Cleared slot names");
+        for (int i = 0; i < inventoryImages.Length - 1; i++)
         {
             inventoryImages[i].sprite = null;
             inventoryImages[i].gameObject.SetActive(false);
         }
+        Debug.Log("Cleared Images");
         //update with new info
-        for (int i = 0; i< inventoryItems.Count; i++)
+        for (int i = 0; i < inventoryItems.Count; i++)
         {
             inventorySlotNames[i].text = inventoryItems[i].getName();
             inventoryImages[i].sprite = inventoryItems[i].itemImage;
             inventoryImages[i].gameObject.SetActive(true);
+        }
+        Debug.Log("Set items images");
+
+        if (hasItem("Tower Tarts"))
+        {
+            tartCount.text = inventoryItems[getInventoryIndex("TowerTarts")].counter.ToString();
+            Debug.Log("Does have tower tarts item");
+            tartHolder.SetActive(true);
+            if (inventoryItems[getInventoryIndex("TowerTarts")].counter < inventoryItems[getInventoryIndex("TowerTarts")].maxCount)
+            {
+                
+                Debug.Log("Index where tarts are at index: " + getInventoryIndex("TowerTarts"));
+                tartInfo.text = "Get Tarts";
+                Debug.Log("Get tarts works");
+            }else if(inventoryItems[getInventoryIndex("TowerTarts")].counter == inventoryItems[getInventoryIndex("TowerTarts")].maxCount)
+            {
+                tartInfo.text = "Tarts are at Max";
+            }
+        }
+        else
+        {
+            tartHolder.SetActive(false);
+            tartInfo.text = "Have not unlocked tarts.";
         }
     }
 
@@ -234,6 +271,84 @@ public class inventoryHandler : MonoBehaviour
         updateInventory();
 
     }
+
+    
+
+    public void increaseTarts()
+    {
+
+        if (hasItem("Tower Tarts"))
+        {
+            Debug.Log("Tower tarts current count: " + inventoryItems[getInventoryIndex("TowerTarts")].counter);
+            Debug.Log("Tower tarts max count: " + inventoryItems[getInventoryIndex("TowerTarts")].maxCount);
+            if(inventoryItems[getInventoryIndex("TowerTarts")].counter < inventoryItems[getInventoryIndex("TowerTarts")].getMaxCount())
+            {
+                inventoryItems[getInventoryIndex("TowerTarts")].counter = inventoryItems[getInventoryIndex("TowerTarts")].getMaxCount();
+                updateInventory();
+            }
+            else
+            {
+                Debug.Log("Tarts already at max");
+            }
+        }
+        else
+        {
+            Debug.Log("Has not unlocked tower tarts");
+        }
+        
+    }
+
+    public void decreaseTarts()
+    {
+        if(hasItem("Tower Tarts"))
+        {
+            if(inventoryItems[getInventoryIndex("Tower Tarts")].getCurrentCount() > 0)
+            {
+                inventoryItems[getInventoryIndex("Tower Tarts")].counter = inventoryItems[getInventoryIndex("Tower Tarts")].counter-1;
+                updateInventory();
+            }
+            else
+            {
+                Debug.Log("no more tarts left");
+                updateInventory();
+            }
+        }
+       
+    }
+
+    public bool hasItem(string itemName)
+    {
+        bool output = false;
+        for (int i = 0; i < inventoryItems.Count; i++)
+        {
+            if(inventoryItems[i].itemName == itemName)
+            {
+               output =  true;
+                break;
+            }
+            else
+            {
+                output = false;
+            }
+        }
+
+        return output;   
+    }
+
+    public int getInventoryIndex(string itemName)
+    {
+        int output = 0;
+        for (int i = 0; i < inventoryItems.Count; i++)
+        {
+            if (inventoryItems[i].itemName == itemName)
+            {
+                Debug.Log("The index is: " + i);
+                output = i;
+                break;
+            }
+        }
+        return output;
+    }
 }
 
 public class itemClass
@@ -247,7 +362,7 @@ public class itemClass
     public bool pickPocketed;
     public bool counted;
     public int counter = 0;
-    public int maxCount;
+    public int maxCount = 5;
 
   public string getDescription()
     {
@@ -262,5 +377,15 @@ public class itemClass
     public string getGameObjectName()
     {
         return gameObjectName;
+    }
+
+    public int getCurrentCount()
+    {
+        return counter;
+    }
+
+    public int getMaxCount()
+    {
+        return maxCount;
     }
 }

@@ -16,6 +16,7 @@ public class collectionScript : MonoBehaviour
 
     public GameObject pickUpText;
     public GameObject pickPocketText;
+    public GameObject tartHolder;
 
     public LayerMask[] collectiblesLayers;
 
@@ -29,6 +30,7 @@ public class collectionScript : MonoBehaviour
     {
         pickUpTextHolder = GameObject.Find("pickUpText");
         pickPocketTextHolder = GameObject.Find("pickPocketText");
+        tartHolder = GameObject.Find("tartText");
         InventoryHandlerGlobal = GameObject.Find("GlobalInventoryManager");
         InventoryHandlerGlobal.GetComponent<inventoryHandler>().itemsCollected.Clear();
     }
@@ -62,6 +64,10 @@ public class collectionScript : MonoBehaviour
                     pickPocketTextHolder.GetComponentInChildren<Text>().enabled = false;
 
                 }
+                else if(collectibleItem.gameObject.tag == "tartHolder")
+                {
+                    InventoryHandlerGlobal.GetComponent<inventoryHandler>().increaseTarts();
+                }
 
             }
         }
@@ -87,6 +93,11 @@ public class collectionScript : MonoBehaviour
                     pickPocketTextHolder.GetComponent<Image>().enabled = true;
                     pickPocketTextHolder.GetComponentInChildren<Text>().enabled = true;
                 }
+                else if(tag.gameObject.tag == "tartHolder")
+                {
+                    tartHolder.GetComponent<Image>().enabled = true;
+                    tartHolder.GetComponentInChildren<Text>().enabled = true;
+                }
             }
 
 
@@ -104,6 +115,14 @@ public class collectionScript : MonoBehaviour
             pickPocketTextHolder.GetComponent<Image>().enabled = false;
             pickPocketTextHolder.GetComponentInChildren<Text>().enabled = false;
             //pickPocketT.enabled = false;
+            tartHolder.GetComponent<Image>().enabled = false;
+            tartHolder.GetComponentInChildren<Text>().enabled = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q)  && InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Tower Tarts"))
+        {
+
+            InventoryHandlerGlobal.GetComponent<inventoryHandler>().decreaseTarts();
         }
 
     }
@@ -117,5 +136,7 @@ public class collectionScript : MonoBehaviour
         Gizmos.DrawWireSphere(collectionPoint.position, collectionRange);
     }
 
+
+  
 
 }

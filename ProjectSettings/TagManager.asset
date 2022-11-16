@@ -13,6 +13,7 @@ TagManager:
   - pickUpText
   - Canvas
   - exitTutLevel
+  - tartHolder
   layers:
   - Default
   - TransparentFX
