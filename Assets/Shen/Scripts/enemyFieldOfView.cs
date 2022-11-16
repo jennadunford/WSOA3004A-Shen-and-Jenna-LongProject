@@ -20,6 +20,10 @@ public class enemyFieldOfView : MonoBehaviour
 
     public GameObject audioManager;
 
+    private GameObject seenTart;
+
+    public static bool TartinRange = false;
+
 
     //public LayerMask playerLayer;
 
@@ -56,18 +60,17 @@ public class enemyFieldOfView : MonoBehaviour
                     //player.GetComponent<playerCollection>().resetEmeralds();
                     //player.transform.position = playerRespawnPoint.position;
                 }
-                else
-                {
-                    //Debug.Log("player out of view");
-                }
+                
             }   
-            /*else
-            {
-                Debug.Log("player out of view");
-            }*/
+           
 
             
 
+        }
+        if(seenTart && !playerMovement.playerCaught)
+        {
+            TartinRange = true;
+            gameObject.GetComponent<jennaEnemyPatrol>().patrolling = false;
         }
     }
 
@@ -119,6 +122,23 @@ public class enemyFieldOfView : MonoBehaviour
         resetPlayer();
         
         
+
+    }
+
+    public void tartSeen(GameObject tart)
+    {
+        transform.position = tart.transform.position;
+        seenTart = tart;
+        TartinRange = true;
+        gameObject.GetComponent<jennaEnemyPatrol>().patrolling = false;
+        Invoke("eatTart", 3f);
+    }
+    public void eatTart()
+    {
+        //make munchin sounds
+        Destroy(seenTart);
+        TartinRange = false;
+        gameObject.GetComponent<jennaEnemyPatrol>().patrolling = true;
 
     }
 

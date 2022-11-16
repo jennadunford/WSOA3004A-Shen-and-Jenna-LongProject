@@ -9,6 +9,7 @@ public class jennaEnemyPatrol : MonoBehaviour
     public float enemyMoveSpeed = 10f;
     public int patrolCount = 1;
 
+
     public bool patrolling = true;
 
 
@@ -17,7 +18,7 @@ public class jennaEnemyPatrol : MonoBehaviour
     //each time the enemy reaches a transform, counter will increase by 1 until it reaches three it will become zero again
     void Update()
     {
-        if (patrolling)
+        if (patrolling && !enemyFieldOfView.TartinRange)
         {
             if (patrolCount >= enemyPatrolPoints.Length)
             {

@@ -17,6 +17,7 @@ public class Player_Whistle : MonoBehaviour
     public bool whistleCoolDownOver = true;
 
     public GameObject playerObject;
+    public GameObject circleRange;
 
   
 
@@ -26,6 +27,7 @@ public class Player_Whistle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        circleRange.SetActive(false);
         remainingWhistleTime = totalWhistleTime;
         whistling = false;
         whistleCoolDownOver = true;
@@ -42,6 +44,8 @@ public class Player_Whistle : MonoBehaviour
                 whistling = true;
                 newWhistlePosition = transform;
                 playerObject.GetComponent<SpriteRenderer>().color = Color.green;
+                circleRange.SetActive(true);
+
             }
         }
 
@@ -54,6 +58,7 @@ public class Player_Whistle : MonoBehaviour
             //dashCoolDownTime -= Time.deltaTime;
             whistleCoolDownOver = false;
             playerObject.GetComponent<SpriteRenderer>().color = Color.white;
+            circleRange.SetActive(false);
         }
 
         if (whistling)
@@ -64,8 +69,8 @@ public class Player_Whistle : MonoBehaviour
             foreach (Collider2D distractedEnemy in enemies)
             {
                 Debug.Log(distractedEnemy.gameObject.name + " is distracted now");
-                distractedEnemy.GetComponent<enemyFOVRotate>().rotateToDistraction(newWhistlePosition);
-                distractedEnemy.GetComponent<enemyFOVRotate>().distracted = true;
+                distractedEnemy.GetComponentInParent<enemyFOVRotate>().rotateToDistraction(newWhistlePosition);
+                distractedEnemy.GetComponentInParent<enemyFOVRotate>().distracted = true;
             }
 
             remainingWhistleTime -= Time.deltaTime; //fixed delta time is for fixed update, update just uses delta time

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class collectionScript : MonoBehaviour
 {
@@ -83,6 +84,27 @@ public class collectionScript : MonoBehaviour
                         Invoke("turnBackOn", 5f);
                     }
                 }
+                else if(collectibleItem.gameObject.tag == "Lantern")
+                {
+                    if (InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Box of Matches"))
+                    {
+                        Debug.Log("Turn lights on");
+                        GameObject globalLight = GameObject.Find("Light2D");
+                        globalLight.GetComponent<Light2D>().intensity = 0.91f;
+                        GameObject A1Light = GameObject.Find("LitArea1");
+                        GameObject A2Light = GameObject.Find("LitArea2");
+                        GameObject A3Light = GameObject.Find("LitArea3");
+                        Debug.Log(A1Light.name);
+                        A1Light.SetActive(false);
+                        A2Light.SetActive(false);
+                        A3Light.SetActive(false);
+
+                    }
+                }
+                else if(collectibleItem.gameObject.tag == "tart")
+                {
+                    InventoryHandlerGlobal.GetComponent<inventoryHandler>().incrementTarts(collectibleItem.gameObject);
+                }
 
             }
         }
@@ -118,14 +140,34 @@ public class collectionScript : MonoBehaviour
                     if (InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Steam Wheel Key"))
                     {
                         keyTextHolder.GetComponent<Image>().enabled = true;
+                        keyTextHolder.GetComponentInChildren<Text>().text = "Use Key";
                         keyTextHolder.GetComponentInChildren<Text>().enabled = true;
                        // Debug.Log("Has key");
                     }
+                   
+                    
+                }
+                else if(tag.gameObject.tag == "Lantern")
+                {
+                    if(InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Box of Matches"))
+                    {
+                        keyTextHolder.GetComponent<Image>().enabled = true;
+                        keyTextHolder.GetComponentInChildren<Text>().enabled = true;
+
+                        keyTextHolder.GetComponentInChildren<Text>().text = "Use Matches";
+                        //Debug.Log("On master lantern with matches");
+                    }
                     else
                     {
-                       // Debug.Log("No key");
+                        Debug.Log("By master lantern - no matches");
                     }
-                    
+                }
+                else if(tag.gameObject.tag == "tart")
+                {
+                    keyTextHolder.GetComponent<Image>().enabled = true;
+                    keyTextHolder.GetComponentInChildren<Text>().enabled = true;
+
+                    keyTextHolder.GetComponentInChildren<Text>().text = "Pick Up Tart";
                 }
             }
 
@@ -154,7 +196,8 @@ public class collectionScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)  && InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Tower Tarts"))
         {
 
-            InventoryHandlerGlobal.GetComponent<inventoryHandler>().decreaseTarts();
+            InventoryHandlerGlobal.GetComponent<inventoryHandler>().decreaseTarts(transform);
+
         }
 
     }

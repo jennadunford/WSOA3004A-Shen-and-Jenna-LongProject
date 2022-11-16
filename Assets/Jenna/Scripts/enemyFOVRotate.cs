@@ -39,7 +39,7 @@ public class enemyFOVRotate : MonoBehaviour
             fovPoint.transform.rotation = Quaternion.Lerp(fovPoint.transform.rotation, Quaternion.AngleAxis(angle - 90, Vector3.forward), 0.1f);
         }
 
-        if (!gameObject.GetComponent<jennaEnemyPatrol>().patrolling && !distracted)
+        if (!gameObject.GetComponent<jennaEnemyPatrol>().patrolling && !distracted && !enemyFieldOfView.TartinRange)
         {
             var ang = Mathf.Atan2(0, 0) * Mathf.Rad2Deg;
            // fovPoint.transform.rotation = Quaternion.Lerp(fovPoint.transform.rotation, Quaternion.AngleAxis(-200, Vector3.forward), 0.1f);

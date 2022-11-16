@@ -204,6 +204,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -276,6 +288,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[5]
       value: 
       objectReference: {fileID: 1860734503}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &79060140 stripped
@@ -5745,6 +5761,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5805,6 +5833,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 1224555053}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &193308862 stripped
@@ -5934,6 +5966,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy10
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -6030,6 +6078,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[11]
       value: 
       objectReference: {fileID: 1824038797}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &334524422 stripped
@@ -6260,6 +6312,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy6
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6360,6 +6428,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[11]
       value: 
       objectReference: {fileID: 2100239335}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &655760704 stripped
@@ -6413,6 +6485,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy9
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -6473,6 +6561,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 649951135}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &666370479 stripped
@@ -6844,6 +6936,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy8
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -6916,6 +7024,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[5]
       value: 
       objectReference: {fileID: 125610517}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &880220422 stripped
@@ -7000,6 +7112,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy11
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -7056,6 +7184,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 421169937}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &1098079374 stripped
@@ -7346,6 +7478,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7406,6 +7550,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 259813741}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &1182424655 stripped
@@ -7874,6 +8022,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7934,6 +8094,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 1735261505}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &1530125712 stripped
@@ -8168,6 +8332,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy7
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -8240,6 +8420,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[5]
       value: 
       objectReference: {fileID: 2015253553}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &1667892337 stripped
@@ -8885,6 +9069,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy5
       objectReference: {fileID: 0}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1896754912}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 2064084462}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1701354723}
+    - target: {fileID: 4287518732588104739, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: playerRespawnPoint
+      value: 
+      objectReference: {fileID: 1067768457}
     - target: {fileID: 4287518732588104745, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8985,6 +9185,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[11]
       value: 
       objectReference: {fileID: 1610413229}
+    - target: {fileID: 8860557694746711656, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!4 &2028078728 stripped
@@ -9030,6 +9234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3561834455531682391, guid: 67d81268effbad347b61ea72e2920353, type: 3}
+      propertyPath: whistlePoint
+      value: 
+      objectReference: {fileID: 2064084463}
     - target: {fileID: 6554780589642385442, guid: 67d81268effbad347b61ea72e2920353, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9083,6 +9291,11 @@ PrefabInstance:
 --- !u!4 &2064084462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6554780589642385468, guid: 67d81268effbad347b61ea72e2920353, type: 3}
+  m_PrefabInstance: {fileID: 2064084461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2064084463 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2895108290036149414, guid: 67d81268effbad347b61ea72e2920353, type: 3}
   m_PrefabInstance: {fileID: 2064084461}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2067634302

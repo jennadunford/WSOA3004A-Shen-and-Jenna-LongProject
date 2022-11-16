@@ -21,6 +21,15 @@ public class inventoryHandler : MonoBehaviour
 
     public Text tartInfo;
 
+    public GameObject newTartPrefab;
+
+    public GameObject tutorialLevelGoals;
+    public GameObject Level1Goals;
+    public GameObject Level2Goals;
+    public GameObject Level3Goals;
+    public GameObject Level4Goals;
+    public GameObject Level5Goals;
+
 
     private void Awake()
     {
@@ -127,33 +136,77 @@ public class inventoryHandler : MonoBehaviour
         emeraldHolder.counted = false;
         allItems.Add(emeraldHolder);
 
-        //updateInventory();
 
     }
 
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        updateInventory();
     }
-
-    // Update is called once per frame
 
     private void Update()
     {
-       
+
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                tutorialLevelGoals.SetActive(true);
+                Level1Goals.SetActive(false);
+                Level2Goals.SetActive(false);
+                Level3Goals.SetActive(false);
+                Level4Goals.SetActive(false);
+                Level5Goals.SetActive(false);
+                break;
+            case 2:
+                tutorialLevelGoals.SetActive(false);
+                Level1Goals.SetActive(true);
+                Level2Goals.SetActive(false);
+                Level3Goals.SetActive(false);
+                Level4Goals.SetActive(false);
+                Level5Goals.SetActive(false);
+                break;
+            case 3:
+                tutorialLevelGoals.SetActive(false);
+                Level1Goals.SetActive(false);
+                Level2Goals.SetActive(true);
+                Level3Goals.SetActive(false);
+                Level4Goals.SetActive(false);
+                Level5Goals.SetActive(false);
+                break;
+            case 4:
+                tutorialLevelGoals.SetActive(false);
+                Level1Goals.SetActive(false);
+                Level2Goals.SetActive(false);
+                Level3Goals.SetActive(true);
+                Level4Goals.SetActive(false);
+                Level5Goals.SetActive(false);
+                break;
+            case 5:
+                tutorialLevelGoals.SetActive(false);
+                Level1Goals.SetActive(false);
+                Level2Goals.SetActive(false);
+                Level3Goals.SetActive(false);
+                Level4Goals.SetActive(true);
+                Level5Goals.SetActive(false);
+                break;
+            case 6:
+                tutorialLevelGoals.SetActive(false);
+                Level1Goals.SetActive(false);
+                Level2Goals.SetActive(false);
+                Level3Goals.SetActive(false);
+                Level4Goals.SetActive(false);
+                Level5Goals.SetActive(true);
+                break;
+        }
     }
+
     public void showDescription(string name)
     {
         int indexVal = int.Parse(name);
         if(indexVal <inventoryItems.Count)
         {
             inventoryDescription.text = inventoryItems[indexVal].getDescription();
-           /* if (inventoryItems[indexVal].usable)
-            {
-                Debug.Log("Show button for usability");
-                Debug.Log("Also show how many items of object");
-
-            }*/
         }
         else
         {
@@ -163,23 +216,14 @@ public class inventoryHandler : MonoBehaviour
     }
 
     public void addToInventory(string name, GameObject item)
-    {
-        //Debug.Log("pls add " + name + " to inventory");
-        //Debug.Log("Length of item list: " + allItems.Count);
+    {        
        for(int i = 0; i < allItems.Count; i++)
-        {
-           // Debug.Log("testing");
-            //Debug.Log(allItems[i].getGameObjectName());
+        {        
             if(allItems[i].getGameObjectName() == name)
             {
-                //Debug.Log("Found item");
-               // Debug.Log("We have found " + allItems[i].getGameObjectName());
                 inventoryItems.Add(allItems[i]);
-                //Debug.Log("Added to inventory items");
                 itemsCollected.Add(item);
-                //Debug.Log("Added to items collected");
-               updateInventory();
-               // Debug.Log("Inventory updated");
+                updateInventory();
                 break;
             }
         }
@@ -187,42 +231,34 @@ public class inventoryHandler : MonoBehaviour
 
     public void updateInventory()
     {
-        
+
+
+
         inventoryDescription.text = "";
-        //clear everything that was there before
         for (int i = 0; i < inventorySlotNames.Length; i++)
         {
             inventorySlotNames[i].text = "";
 
         }
-        //Debug.Log("Cleared slot names");
         for (int i = 0; i < inventoryImages.Length - 1; i++)
         {
             inventoryImages[i].sprite = null;
             inventoryImages[i].gameObject.SetActive(false);
         }
-       // Debug.Log("Cleared Images");
-        //update with new info
         for (int i = 0; i < inventoryItems.Count; i++)
         {
             inventorySlotNames[i].text = inventoryItems[i].getName();
             inventoryImages[i].sprite = inventoryItems[i].itemImage;
             inventoryImages[i].gameObject.SetActive(true);
         }
-       // Debug.Log("Set items images");
-
         if (hasItem("Tower Tarts"))
         {
-            tartCount.text = inventoryItems[getInventoryIndex("TowerTarts")].counter.ToString();
-           // Debug.Log("Does have tower tarts item");
+            tartCount.text = inventoryItems[getInventoryIndex("Tower Tarts")].counter.ToString();
             tartHolder.SetActive(true);
-            if (inventoryItems[getInventoryIndex("TowerTarts")].counter < inventoryItems[getInventoryIndex("TowerTarts")].maxCount)
+            if (inventoryItems[getInventoryIndex("Tower Tarts")].counter < inventoryItems[getInventoryIndex("Tower Tarts")].maxCount)
             {
-                
-               // Debug.Log("Index where tarts are at index: " + getInventoryIndex("TowerTarts"));
                 tartInfo.text = "Get Tarts";
-                //Debug.Log("Get tarts works");
-            }else if(inventoryItems[getInventoryIndex("TowerTarts")].counter == inventoryItems[getInventoryIndex("TowerTarts")].maxCount)
+            }else if(inventoryItems[getInventoryIndex("Tower Tarts")].counter == inventoryItems[getInventoryIndex("Tower Tarts")].maxCount)
             {
                 tartInfo.text = "Tarts are at Max";
             }
@@ -236,12 +272,10 @@ public class inventoryHandler : MonoBehaviour
 
     public void loseItemsFromScene(int sceneNum)
     {
-       // Debug.Log("Number of inventory items currently: " + inventoryItems.Count);
         for(int i = inventoryItems.Count-1; i >= 0; i--)
         {
             if(inventoryItems[i].sceneNumber == sceneNum)
             {
-                //Debug.Log("Removed " + inventoryItems[i].itemName + " from Inventory");
                 for(int j = 0; j < itemsCollected.Count; j++)
                 {
                     if(itemsCollected[j].name == inventoryItems[i].gameObjectName)
@@ -261,29 +295,35 @@ public class inventoryHandler : MonoBehaviour
                 inventoryItems.Remove(inventoryItems[i]);                           
             }
         }
-
-
-        //need to set all lost items to active again
-
-
-
-       // Debug.Log("Inventory items after losing" + inventoryItems.Count);
         updateInventory();
-
     }
 
-    
+    public void incrementTarts(GameObject newTart)
+    {
+        if(hasItem("Tower Tarts"))
+        {
+            int tartIndex = getInventoryIndex("Tower Tarts");
+            if(inventoryItems[tartIndex].counter < inventoryItems[tartIndex].maxCount)
+            {
+                inventoryItems[tartIndex].counter++;
+                Destroy(newTart);
+                updateInventory();
+            }
+        }
+    }
+
+    public void dropTart(Transform tartPos)
+    {
+        Instantiate(newTartPrefab, tartPos.position, Quaternion.identity);
+    }
 
     public void increaseTarts()
     {
-
         if (hasItem("Tower Tarts"))
         {
-            //Debug.Log("Tower tarts current count: " + inventoryItems[getInventoryIndex("TowerTarts")].counter);
-            //Debug.Log("Tower tarts max count: " + inventoryItems[getInventoryIndex("TowerTarts")].maxCount);
-            if(inventoryItems[getInventoryIndex("TowerTarts")].counter < inventoryItems[getInventoryIndex("TowerTarts")].getMaxCount())
+            if(inventoryItems[getInventoryIndex("Tower Tarts")].counter < inventoryItems[getInventoryIndex("Tower Tarts")].getMaxCount())
             {
-                inventoryItems[getInventoryIndex("TowerTarts")].counter = inventoryItems[getInventoryIndex("TowerTarts")].getMaxCount();
+                inventoryItems[getInventoryIndex("Tower Tarts")].counter = inventoryItems[getInventoryIndex("Tower Tarts")].getMaxCount();
                 updateInventory();
             }
             else
@@ -298,7 +338,7 @@ public class inventoryHandler : MonoBehaviour
         
     }
 
-    public void decreaseTarts()
+    public void decreaseTarts(Transform tartPos)
     {
         if(hasItem("Tower Tarts"))
         {
@@ -306,10 +346,10 @@ public class inventoryHandler : MonoBehaviour
             {
                 inventoryItems[getInventoryIndex("Tower Tarts")].counter = inventoryItems[getInventoryIndex("Tower Tarts")].counter-1;
                 updateInventory();
+                dropTart(tartPos);
             }
             else
             {
-                //Debug.Log("no more tarts left");
                 updateInventory();
             }
         }
@@ -342,7 +382,6 @@ public class inventoryHandler : MonoBehaviour
         {
             if (inventoryItems[i].itemName == itemName)
             {
-               // Debug.Log("The index is: " + i);
                 output = i;
                 break;
             }

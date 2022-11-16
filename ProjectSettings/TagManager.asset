@@ -16,6 +16,9 @@ TagManager:
   - tartHolder
   - Wheel
   - steam
+  - Lantern
+  - whistleTeach
+  - tart
   layers:
   - Default
   - TransparentFX
@@ -28,7 +31,7 @@ TagManager:
   - collectedItemLayer
   - pickPocketLayer
   - exitTutLayer
-  - 
+  - tartLayer
   - 
   - 
   - 
