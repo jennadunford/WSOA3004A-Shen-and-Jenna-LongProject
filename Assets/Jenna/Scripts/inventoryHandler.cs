@@ -30,6 +30,25 @@ public class inventoryHandler : MonoBehaviour
     public GameObject Level3Goals;
     public GameObject Level4Goals;
 
+    
+    public Image tagHolder;
+    public Image tagImg;
+    public Image keyHolder;
+    public Image keyImg;
+    public Image schemHolder;
+    public Image schemImg;
+    public Image matchesHolder;
+    public Image matchImg;
+    public Image bookHolder;
+    public Image bookImg;
+    public Image tartHold;
+    public Image tartImg;
+    public Image leverHolder;
+    public Image leverImg;
+    public Image caseImg;
+    public Image caseHolder;
+    public Image logHolder;
+    public Image logImg;
 
     private void Awake()
     {
@@ -216,6 +235,7 @@ public class inventoryHandler : MonoBehaviour
         {        
             if(allItems[i].getGameObjectName() == name)
             {
+                setItemOpacity(allItems[i].itemName, true);
                 inventoryItems.Add(allItems[i]);
                 itemsCollected.Add(item);
                 updateInventory();
@@ -275,18 +295,24 @@ public class inventoryHandler : MonoBehaviour
                 {
                     if(itemsCollected[j].name == inventoryItems[i].gameObjectName)
                     {
+                        setItemOpacity(inventoryItems[i].itemName, false);
+                     
                         if (inventoryItems[i].pickPocketed)
                         {
                             itemsCollected[j].tag = "pickPocketTag";
+                            setItemOpacity(inventoryItems[i].itemName, false);
                         }
                         else
                         {
+                           
                             itemsCollected[j].SetActive(true);
+                            setItemOpacity(inventoryItems[i].itemName, false);
                         }
                         itemsCollected.Remove(itemsCollected[j]);
                         break;
                     }
                 }
+                
                 inventoryItems.Remove(inventoryItems[i]);                           
             }
         }
@@ -382,6 +408,67 @@ public class inventoryHandler : MonoBehaviour
             }
         }
         return output;
+    }
+
+    public void setItemOpacity(string itemName, bool fullOpacity)
+    {
+
+        Color opacitySet;
+        if (fullOpacity)
+        {
+           
+            opacitySet = new Color(255f, 255f, 255f, 1f);
+        }
+        else
+        {
+          
+            opacitySet = new Color(255f, 255f, 255f, 0.5f);
+        }
+        
+        switch (itemName)
+        {
+            case "Dog Tag":
+                tagHolder.color = opacitySet;
+                tagImg.color = opacitySet;
+               
+                break;
+            case "Boiler Schematic":
+                schemHolder.color = opacitySet;
+                schemImg.color = opacitySet;
+                break;
+            case "Steam Wheel Key":
+                keyHolder.color = opacitySet;
+                keyImg.color = opacitySet;
+                break;
+            case "Chewed Up Book":
+                bookHolder.color = opacitySet;
+                bookImg.color = opacitySet;
+                break;
+            case "Box of Matches":
+                matchesHolder.color = opacitySet;
+                matchImg.color = opacitySet;
+                break;
+            case "Tower Tarts":
+                tartHold.color = opacitySet;
+                tartImg.color = opacitySet;
+                break;
+            case "Chewed Up Lever":
+                leverHolder.color = opacitySet;
+                leverImg.color = opacitySet;
+                break;
+            case "Daily Log":
+                logHolder.color = opacitySet;
+                logImg.color = opacitySet;
+                break;
+            case "Glass Casing":
+                caseHolder.color = opacitySet;
+                caseImg.color = opacitySet;
+                break;
+            default:
+                Debug.Log("missing image");
+                    break;
+
+        }
     }
 }
 

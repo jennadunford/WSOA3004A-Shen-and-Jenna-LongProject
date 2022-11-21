@@ -23,7 +23,7 @@ public class enemyManagement : MonoBehaviour
             {
                 enemy.GetComponent<enemyFOVRotate>().fovPoint.transform.rotation = Quaternion.identity;   
                enemy.transform.position = enemy.GetComponent<jennaEnemyPatrol>().enemyPatrolPoints[0].transform.position;
-                Debug.Log("reset enemies");
+                //Debug.Log("reset enemies");
                 enemy.GetComponent<jennaEnemyPatrol>().patrolCount = 1;
             }
            /* foreach(GameObject point in pickPocketPoints)
