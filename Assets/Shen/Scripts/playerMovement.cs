@@ -47,8 +47,10 @@ public class playerMovement : MonoBehaviour
 
         playerDirection = new Vector2(lastMoveHori, lastMoveVert);
 
-        playerAnimator.SetFloat("horiSpeed", playerVel.y);
+        //playerAnimator.SetFloat("horiSpeed", playerVel.y);
         //playerAnimator.SetFloat("vertSpeed", playerVel.x);
+        playerAnimator.SetFloat("horiSpeed", moveHori);
+        playerAnimator.SetFloat("vertSpeed", vertMovement);
 
 
         if (moveHori != 0)
@@ -99,6 +101,7 @@ public class playerMovement : MonoBehaviour
                 //remainingDashTime -= Time.deltaTime;
                 dashing = true;
                 //playerRigidBody.velocity = new Vector2(lastMoveVert * dashSpeed, lastMoveHori * dashSpeed);
+                playerAnimator.SetBool("Dash", true);
             }
 
             
@@ -121,6 +124,7 @@ public class playerMovement : MonoBehaviour
         {
             playerRigidBody.velocity = new Vector2(0f, 0f);
             dashing = false;
+            playerAnimator.SetBool("Dash", false);
             remainingDashTime = totalDashTime;
             //dashCoolDownTime -= Time.deltaTime;
             coolDownOver = false;
