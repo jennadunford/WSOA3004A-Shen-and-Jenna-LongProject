@@ -26,7 +26,7 @@ public class audioManagement : MonoBehaviour
 
     public void playerPickPocket()
     {
-        audioS.volume = 0.125f;
+        audioS.volume = 0.5f;
         audioS.PlayOneShot(sounds[2]);
     }
 }
