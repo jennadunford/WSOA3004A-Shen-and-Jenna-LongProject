@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Integrations/Game Scenes/Menu.unity
     guid: b9c2b14006f1a4d449cb1764fd7f0219
   - enabled: 1
+    path: Assets/Integrations/Game Scenes/openComicScene.unity
+    guid: 426c7388d0f61d24ea793d700e5307a7
+  - enabled: 1
     path: Assets/Integrations/Game Scenes/TutorialLevel.unity
     guid: 0da5710f9ebbca748ad0fa03b9bafab5
   - enabled: 1

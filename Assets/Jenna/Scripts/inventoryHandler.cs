@@ -60,7 +60,7 @@ public class inventoryHandler : MonoBehaviour
         itemDogTag.itemName = "Dog Tag";
         itemDogTag.itemDescription = "A tag for a dogs' collar, it reads: The most precious baby boy. Please return to Tower Palace.";
         itemDogTag.usable = false;
-        itemDogTag.sceneNumber = 1;
+        itemDogTag.sceneNumber = 2;
         itemDogTag.itemImage = itemImages[0];
         itemDogTag.gameObjectName = "dogTag";
         itemDogTag.pickPocketed = false;
@@ -71,7 +71,7 @@ public class inventoryHandler : MonoBehaviour
         itemSchematic.itemName = "Boiler Schematic";
         itemSchematic.itemDescription = "A schematic of the tower boiler room, it is covered in paw prints.";
         itemSchematic.usable = false;
-        itemSchematic.sceneNumber = 2;
+        itemSchematic.sceneNumber = 3;
         itemSchematic.itemImage = itemImages[1];
         itemSchematic.gameObjectName = "itemSchematic";
         itemSchematic.pickPocketed = false;
@@ -82,7 +82,7 @@ public class inventoryHandler : MonoBehaviour
         wheelKey.itemName = "Steam Wheel Key";
         wheelKey.itemDescription = "A key used in the tower boiler room to allow the use of a steam wheel, which can shut off the flow of steam for a while";
         wheelKey.usable = false;
-        wheelKey.sceneNumber = 2;
+        wheelKey.sceneNumber = 3;
         wheelKey.itemImage = itemImages[2];
         wheelKey.gameObjectName = "wheelKey";
         wheelKey.pickPocketed = true;
@@ -93,7 +93,7 @@ public class inventoryHandler : MonoBehaviour
         ruinedBook.itemName = "Chewed Up Book";
         ruinedBook.itemDescription = "A book about the history of the tower, it is chewed up and covered in paw prints. It has a green binding.";
         ruinedBook.usable = false;
-        ruinedBook.sceneNumber = 3;
+        ruinedBook.sceneNumber = 4;
         ruinedBook.itemImage = itemImages[3];
         ruinedBook.gameObjectName = "ruinedBook";
         ruinedBook.pickPocketed = false;
@@ -104,7 +104,7 @@ public class inventoryHandler : MonoBehaviour
         itemMatches.itemName = "Box of Matches";
         itemMatches.itemDescription = "A box of matches from the tower library - can be used to light the Master Lantern.";
         itemMatches.usable = false;
-        itemMatches.sceneNumber = 3;
+        itemMatches.sceneNumber = 4;
         itemMatches.pickPocketed = true;
         itemMatches.itemImage = itemImages[4];
         itemMatches.gameObjectName = "matches";
@@ -128,7 +128,7 @@ public class inventoryHandler : MonoBehaviour
         leverChewed.itemName = "Chewed Up Lever";
         leverChewed.itemDescription = "A freshly chewed up lever used in the tower dungeon. It had a coat of green paint on it. There must be a spare lever.";
         leverChewed.usable = false;
-        leverChewed.sceneNumber = 5;
+        leverChewed.sceneNumber = 6;
         leverChewed.pickPocketed = false;
         leverChewed.itemImage = itemImages[6];
         leverChewed.gameObjectName = "leverChewed";
@@ -139,7 +139,7 @@ public class inventoryHandler : MonoBehaviour
         dailyLog.itemName = "Daily Log";
         dailyLog.itemDescription = "The daily log from one of the tower guards. It notes that a few minutes ago a dog ran through here with something green in its mouth. The log also notes that it was probably not important or anything.";
         dailyLog.usable = false;
-        dailyLog.sceneNumber = 5;
+        dailyLog.sceneNumber = 6;
         dailyLog.pickPocketed = true;
         dailyLog.itemImage = itemImages[7];
         dailyLog.gameObjectName = "dailyLog";
@@ -150,7 +150,7 @@ public class inventoryHandler : MonoBehaviour
         emeraldHolder.itemName = "Glass Casing";
         emeraldHolder.itemDescription = "The glass casing that held the tower's emerald. It is covered in paw prints and dog slobber.";
         emeraldHolder.usable = false;
-        emeraldHolder.sceneNumber = 5;
+        emeraldHolder.sceneNumber = 6;
         emeraldHolder.pickPocketed = false;
         emeraldHolder.itemImage = itemImages[8];
         emeraldHolder.gameObjectName = "emeraldHolder";
