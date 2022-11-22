@@ -300,6 +300,7 @@ public class inventoryHandler : MonoBehaviour
                         if (inventoryItems[i].pickPocketed)
                         {
                             itemsCollected[j].tag = "pickPocketTag";
+                           itemsCollected[j].gameObject.GetComponent<AudioSource>().enabled = true;
                             setItemOpacity(inventoryItems[i].itemName, false);
                         }
                         else

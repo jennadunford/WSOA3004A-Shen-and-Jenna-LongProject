@@ -67,6 +67,7 @@ public class collectionScript : MonoBehaviour
 
                     InventoryHandlerGlobal.GetComponent<inventoryHandler>().addToInventory(collectibleItem.gameObject.name, collectibleItem.gameObject);
                     collectibleItem.gameObject.tag = "Untagged";
+                    collectibleItem.gameObject.GetComponent<AudioSource>().enabled = false;
                     //
                     audioManager.GetComponent<audioManagement>().playerPickPocket();
                     pickPocketTextHolder.GetComponent<Image>().enabled = false;
