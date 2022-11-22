@@ -50,6 +50,8 @@ public class inventoryHandler : MonoBehaviour
     public Image logHolder;
     public Image logImg;
 
+    public GameObject duckThingz;
+
     private void Awake()
     {
         tartInfo.text = "Has not unlocked tarts";

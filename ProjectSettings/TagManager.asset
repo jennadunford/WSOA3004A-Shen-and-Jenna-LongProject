@@ -24,6 +24,7 @@ TagManager:
   - exitLev4
   - exitLev3
   - exit
+  - duck
   layers:
   - Default
   - TransparentFX

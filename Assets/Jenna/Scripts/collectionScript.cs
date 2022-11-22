@@ -28,6 +28,7 @@ public class collectionScript : MonoBehaviour
 
     public GameObject audioManager;
 
+    public GameObject duckThings;
 
     // Start is called before the first frame update
 
@@ -41,6 +42,7 @@ public class collectionScript : MonoBehaviour
         tartHolder = GameObject.Find("tartText");
         InventoryHandlerGlobal = GameObject.Find("GlobalInventoryManager");
         InventoryHandlerGlobal.GetComponent<inventoryHandler>().itemsCollected.Clear();
+        
     }
 
     // Update is called once per frame
@@ -110,6 +112,10 @@ public class collectionScript : MonoBehaviour
                 {
                     InventoryHandlerGlobal.GetComponent<inventoryHandler>().incrementTarts(collectibleItem.gameObject);
                 }
+                else if(collectibleItem.gameObject.tag == "duck")
+                {
+                    InventoryHandlerGlobal.GetComponent<inventoryHandler>().duckThingz.SetActive(true);
+                }
 
             }
         }
@@ -173,6 +179,12 @@ public class collectionScript : MonoBehaviour
                     keyTextHolder.GetComponentInChildren<Text>().enabled = true;
 
                     keyTextHolder.GetComponentInChildren<Text>().text = "Pick Up Tart";
+                }else if(tag.gameObject.tag == "duck")
+                {
+                    keyTextHolder.GetComponent<Image>().enabled = true;
+                    keyTextHolder.GetComponentInChildren<Text>().enabled = true;
+
+                    keyTextHolder.GetComponentInChildren<Text>().text = "Speak";
                 }
             }
 
