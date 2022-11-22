@@ -6176,6 +6176,10 @@ PrefabInstance:
       propertyPath: enemyPatrolPoints.Array.data[5]
       value: 
       objectReference: {fileID: 78166160}
+    - target: {fileID: 7527554887921249717, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddfe2014c6685d2488428502a0845d6f, type: 3}
 --- !u!1 &1137019230 stripped
