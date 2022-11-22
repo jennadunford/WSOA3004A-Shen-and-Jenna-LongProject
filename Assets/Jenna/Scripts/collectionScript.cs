@@ -30,6 +30,15 @@ public class collectionScript : MonoBehaviour
 
     public GameObject duckThings;
 
+
+
+    GameObject globalLight;
+
+    GameObject A1Light;
+    GameObject A2Light;
+    GameObject A3Light;
+
+    public static bool lightsOn = false;
     // Start is called before the first frame update
 
 
@@ -96,15 +105,16 @@ public class collectionScript : MonoBehaviour
                     if (InventoryHandlerGlobal.GetComponent<inventoryHandler>().hasItem("Box of Matches"))
                     {
                         Debug.Log("Turn lights on");
-                        GameObject globalLight = GameObject.Find("Light2D");
+                        globalLight = GameObject.Find("Light2D");
                         globalLight.GetComponent<Light2D>().intensity = 0.91f;
-                        GameObject A1Light = GameObject.Find("LitArea1");
-                        GameObject A2Light = GameObject.Find("LitArea2");
-                        GameObject A3Light = GameObject.Find("LitArea3");
+                        A1Light = GameObject.Find("LitArea1");
+                        A2Light = GameObject.Find("LitArea2");
+                        A3Light = GameObject.Find("LitArea3");
                         Debug.Log(A1Light.name);
                         A1Light.SetActive(false);
                         A2Light.SetActive(false);
                         A3Light.SetActive(false);
+                        lightsOn = true;
 
                     }
                 }
@@ -234,7 +244,15 @@ public class collectionScript : MonoBehaviour
         Gizmos.DrawWireSphere(collectionPoint.position, collectionRange);
     }
 
-
+    public void turnOffLights()
+    {
+        Debug.Log("Turn lights off");
+        globalLight.GetComponent<Light2D>().intensity = 0.12f;
+        A1Light.SetActive(true);
+        A2Light.SetActive(true);
+        A3Light.SetActive(true);
+        lightsOn = false;
+    }
   
 
 }

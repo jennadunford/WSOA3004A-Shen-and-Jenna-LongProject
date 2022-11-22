@@ -86,6 +86,10 @@ public class enemyFieldOfView : MonoBehaviour
         gameObject.GetComponent<jennaEnemyPatrol>().patrolling = true;
         enemyManagement.resetEnemies = true;
         playerMovement.playerCaught = false;
+        if (collectionScript.lightsOn)
+        {
+            player.gameObject.GetComponent<collectionScript>().turnOffLights();
+        }
         player.GetComponent<collectionScript>().InventoryHandlerGlobal.GetComponent<inventoryHandler>().loseItemsFromScene(SceneManager.GetActiveScene().buildIndex);
        
         //resetting enemy

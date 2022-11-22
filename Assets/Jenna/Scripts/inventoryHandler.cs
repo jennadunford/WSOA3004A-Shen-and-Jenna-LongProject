@@ -116,7 +116,7 @@ public class inventoryHandler : MonoBehaviour
 
         itemClass towerTarts = new itemClass();
         towerTarts.itemName = "Tower Tarts";
-        towerTarts.itemDescription = "A sweet pastry enjoyed by the people of the tower. It is particularly loved by the guards, who will drop everything to eat one of these tasty treats.";
+        towerTarts.itemDescription = "A sweet pastry enjoyed by the people of the tower. It is particularly loved by the guards, who will drop everything to eat one of these tasty treats. [Use Q on the keyboard and Circle on the controller to drop tarts and distract guards]";
         towerTarts.usable = true;
         towerTarts.sceneNumber = 10;
         towerTarts.pickPocketed = false;
