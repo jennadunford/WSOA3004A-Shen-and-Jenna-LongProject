@@ -17535,6 +17535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerTarts
       objectReference: {fileID: 0}
+    - target: {fileID: 5420126226933255714, guid: 906341162b73b9441b69ea1e46e74899, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5420126226933255725, guid: 906341162b73b9441b69ea1e46e74899, type: 3}
       propertyPath: m_RootOrder
       value: 1
