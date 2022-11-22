@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class inventoryHandler : MonoBehaviour
 {
     public Sprite[] itemImages;
@@ -51,6 +52,8 @@ public class inventoryHandler : MonoBehaviour
     public Image logImg;
 
     public GameObject duckThingz;
+
+    public GameObject eventSystem;
 
     private void Awake()
     {
@@ -171,7 +174,7 @@ public class inventoryHandler : MonoBehaviour
 
         switch (SceneManager.GetActiveScene().buildIndex)
         {
-            case 1:
+            case 2:
                 tutorialLevelGoals.SetActive(true);
                 Level1Goals.SetActive(false);
                 Level2Goals.SetActive(false);
@@ -179,7 +182,7 @@ public class inventoryHandler : MonoBehaviour
                 Level4Goals.SetActive(false);
     
                 break;
-            case 2:
+            case 3:
                 tutorialLevelGoals.SetActive(false);
                 Level1Goals.SetActive(true);
                 Level2Goals.SetActive(false);
@@ -187,7 +190,7 @@ public class inventoryHandler : MonoBehaviour
                 Level4Goals.SetActive(false);
 
                 break;
-            case 3:
+            case 4:
                 tutorialLevelGoals.SetActive(false);
                 Level1Goals.SetActive(false);
                 Level2Goals.SetActive(true);
@@ -195,7 +198,7 @@ public class inventoryHandler : MonoBehaviour
                 Level4Goals.SetActive(false);
 
                 break;
-            case 4:
+            case 5:
                 tutorialLevelGoals.SetActive(false);
                 Level1Goals.SetActive(false);
                 Level2Goals.SetActive(false);
@@ -203,7 +206,7 @@ public class inventoryHandler : MonoBehaviour
                 Level4Goals.SetActive(false);
 
                 break;
-            case 5:
+            case 6:
                 tutorialLevelGoals.SetActive(false);
                 Level1Goals.SetActive(false);
                 Level2Goals.SetActive(false);
@@ -211,8 +214,10 @@ public class inventoryHandler : MonoBehaviour
                 Level4Goals.SetActive(true);
 
                 break;
-            case 6:
-                canvas.SetActive(false);
+            case 7:
+                //canvas.SetActive(false);
+                Destroy(canvas);
+                Destroy(eventSystem);
                 break;
         }
     }
